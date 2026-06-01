@@ -14,9 +14,8 @@ export function Contact() {
           04 — Contact
         </div>
 
-        <h2 className="reveal mt-8 font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
-          Have a project, an internship, or just want to{" "}
-          <em className="italic text-gradient">say hi?</em>
+        <h2 className="reveal mt-8 font-display font-semibold text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
+          Let's build something <span className="text-gradient">together</span>.
         </h2>
 
         <div className="reveal mt-12 flex flex-wrap items-center gap-4">
@@ -28,20 +27,23 @@ export function Contact() {
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            Usually replies within a day
+            Replies within a day
           </span>
         </div>
 
         <div className="reveal mt-24 grid gap-6 border-t border-border pt-10 sm:grid-cols-4">
-          {socials.map((s) => (
+          {socials.map((s, i) => (
             <a
               key={s.label}
               href={s.href}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center justify-between border-b border-border pb-4 transition-colors hover:border-primary"
+              className="reveal-up group flex items-center justify-between border-b border-border pb-4 transition-colors hover:border-primary"
+              style={{ animationDelay: `${i * 80}ms` }}
             >
-              <span className="font-display text-xl">{s.label}</span>
+              <span className="font-display font-semibold text-xl transition-colors group-hover:text-primary">
+                {s.label}
+              </span>
               <span className="text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary">
                 ↗
               </span>
@@ -50,8 +52,8 @@ export function Contact() {
         </div>
 
         <footer className="reveal mt-20 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-muted-foreground">
-          <span>© {new Date().getFullYear()} — Crafted with care.</span>
-          <span>Designed & built from scratch.</span>
+          <span>© {new Date().getFullYear()} — cs.dev</span>
+          <span>Designed & built from scratch</span>
         </footer>
       </div>
     </section>

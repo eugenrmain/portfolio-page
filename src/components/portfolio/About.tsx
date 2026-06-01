@@ -8,17 +8,16 @@ export function About() {
         </div>
 
         <div className="mt-12 grid gap-16 lg:grid-cols-[1.4fr_1fr]">
-          <div className="reveal">
-            <h2 className="font-display text-4xl leading-tight tracking-tight sm:text-6xl">
-              A student who treats every project like it's going to{" "}
-              <em className="italic text-primary">production</em>.
+          <div className="reveal-left">
+            <h2 className="font-display font-semibold text-4xl leading-[1.05] tracking-tight sm:text-6xl">
+              Every project shipped like it's going to{" "}
+              <span className="text-primary">production</span>.
             </h2>
             <div className="mt-10 space-y-6 text-lg leading-relaxed text-muted-foreground">
               <p>
-                I started writing code because I wanted to build games. Five
-                years and a lot of broken builds later, I'm pursuing a
-                Computer Science degree with a focus on intelligent systems and
-                interactive media.
+                Started writing code to make games. Five years and many broken
+                builds later, pursuing a Computer Science degree with a focus
+                on intelligent systems and interactive media.
               </p>
               <p>
                 Most of my time goes into shipping small, polished things —
@@ -30,7 +29,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="reveal space-y-4">
+          <div className="reveal-right space-y-4">
             {[
               { k: "Currently", v: "B.Sc. Computer Science, 3rd year" },
               { k: "Focus", v: "AI · Game Dev · Tooling" },
@@ -39,7 +38,7 @@ export function About() {
             ].map((row) => (
               <div
                 key={row.k}
-                className="group flex items-baseline justify-between gap-4 border-b border-border pb-4 transition-colors hover:border-foreground/40"
+                className="group flex items-baseline justify-between gap-4 border-b border-border pb-4 transition-colors hover:border-primary/60"
               >
                 <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
                   {row.k}

@@ -38,34 +38,35 @@ export function Projects() {
           03 — Selected work
         </div>
         <div className="reveal mt-6 flex flex-wrap items-end justify-between gap-6">
-          <h2 className="font-display text-4xl leading-tight tracking-tight sm:text-6xl max-w-2xl">
-            Things I've <em className="italic text-primary">built</em> and learned from.
+          <h2 className="font-display font-semibold text-4xl leading-[1.05] tracking-tight sm:text-6xl max-w-2xl">
+            Things I've <span className="text-primary">built</span>.
           </h2>
           <a
             href="https://github.com"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+            className="font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
           >
             All on GitHub →
           </a>
         </div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-2">
-          {projects.map((p) => (
+          {projects.map((p, i) => (
             <a
               key={p.title}
               href={p.href}
-              className="reveal group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_60px_-20px_var(--glow)]"
+              className="reveal-up group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_60px_-20px_var(--glow)]"
+              style={{ animationDelay: `${i * 100}ms` }}
             >
               <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                style={{ background: "radial-gradient(600px circle at var(--mx,50%) var(--my,0%), oklch(0.86 0.16 92 / 0.08), transparent 40%)" }}
+                style={{ background: "radial-gradient(600px circle at 50% 0%, oklch(0.78 0.19 310 / 0.12), transparent 50%)" }}
               />
               <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
                 <span>{p.year}</span>
-                <span className="transition-transform duration-500 group-hover:rotate-45">↗</span>
+                <span className="transition-transform duration-500 group-hover:rotate-45 group-hover:text-primary">↗</span>
               </div>
-              <h3 className="mt-6 font-display text-3xl tracking-tight">
+              <h3 className="mt-6 font-display font-semibold text-3xl tracking-tight transition-colors group-hover:text-primary">
                 {p.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
