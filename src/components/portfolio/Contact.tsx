@@ -1,0 +1,59 @@
+const socials = [
+  { label: "GitHub", href: "https://github.com" },
+  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "itch.io", href: "https://itch.io" },
+  { label: "Email", href: "mailto:hello@example.com" },
+];
+
+export function Contact() {
+  return (
+    <section id="contact" className="relative px-5 sm:px-8 py-32">
+      <div className="mx-auto max-w-6xl">
+        <div className="reveal flex items-center gap-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          <span className="h-px w-8 bg-border" />
+          04 — Contact
+        </div>
+
+        <h2 className="reveal mt-8 font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
+          Have a project, an internship, or just want to{" "}
+          <em className="italic text-gradient">say hi?</em>
+        </h2>
+
+        <div className="reveal mt-12 flex flex-wrap items-center gap-4">
+          <a
+            href="mailto:hello@example.com"
+            className="group inline-flex items-center gap-3 rounded-full bg-primary px-7 py-4 text-base font-medium text-primary-foreground transition-all hover:gap-4 hover:shadow-[0_10px_40px_-10px_var(--glow)]"
+          >
+            hello@example.com
+            <span className="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+          <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            Usually replies within a day
+          </span>
+        </div>
+
+        <div className="reveal mt-24 grid gap-6 border-t border-border pt-10 sm:grid-cols-4">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-center justify-between border-b border-border pb-4 transition-colors hover:border-primary"
+            >
+              <span className="font-display text-xl">{s.label}</span>
+              <span className="text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary">
+                ↗
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <footer className="reveal mt-20 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-muted-foreground">
+          <span>© {new Date().getFullYear()} — Crafted with care.</span>
+          <span>Designed & built from scratch.</span>
+        </footer>
+      </div>
+    </section>
+  );
+}
