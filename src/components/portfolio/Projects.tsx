@@ -216,7 +216,7 @@ export function Projects() {
 
         {filtered.length === 0 && (
           <p className="mt-10 text-center font-mono text-sm text-muted-foreground">
-            No projects match "{filter}" yet.
+            No projects match {tag ? `"${tag}"` : `"${category}"`} yet.
           </p>
         )}
       </div>
