@@ -4,7 +4,8 @@ const links = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
+  { href: "#projects", label: "Work" },
+  { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -41,11 +42,9 @@ export function Nav() {
         scrolled ? "py-3" : "py-5"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 sm:px-8">
-        <div className="hidden sm:block w-20" aria-hidden />
-
+      <div className="mx-auto flex max-w-6xl items-center justify-center px-4 sm:px-8">
         <nav
-          className={`flex items-center gap-0.5 sm:gap-1 rounded-full glass px-1.5 sm:px-2 py-1 sm:py-1.5 text-xs sm:text-sm transition-all duration-500 ${
+          className={`flex items-center gap-0.5 sm:gap-1 rounded-full glass px-1.5 sm:px-2 py-1 sm:py-1.5 text-[11px] sm:text-sm transition-all duration-500 ${
             scrolled ? "shadow-[0_8px_30px_-12px_var(--glow)]" : ""
           }`}
         >
@@ -66,12 +65,6 @@ export function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href="#contact"
-          className="hidden sm:inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-sm text-foreground/90 transition-all hover:border-primary hover:text-primary"
-        >
-          Let's talk <span aria-hidden>→</span>
-        </a>
       </div>
     </header>
   );

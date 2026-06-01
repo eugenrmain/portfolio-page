@@ -4,13 +4,14 @@ import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
 import { Skills } from "@/components/portfolio/Skills";
 import { Projects } from "@/components/portfolio/Projects";
+import { Experience } from "@/components/portfolio/Experience";
 import { Contact } from "@/components/portfolio/Contact";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CS Student Portfolio — Python, C#, Unity & AI" },
+      { title: "Eugen Ranow — M.Sc. Computer Science @ KTH" },
       {
         name: "description",
         content:

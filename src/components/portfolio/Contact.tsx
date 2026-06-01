@@ -1,8 +1,8 @@
 const socials = [
+  { label: "Email", href: "mailto:eugen.ranow2005@gmail.com" },
+  { label: "Phone", href: "tel:+46721525858" },
   { label: "GitHub", href: "https://github.com" },
   { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "itch.io", href: "https://itch.io" },
-  { label: "Email", href: "mailto:hello@example.com" },
 ];
 
 export function Contact() {
@@ -11,7 +11,7 @@ export function Contact() {
       <div className="mx-auto max-w-6xl">
         <div className="reveal flex items-center gap-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span className="h-px w-8 bg-border" />
-          04 — Contact
+          05 — Contact
         </div>
 
         <h2 className="reveal mt-8 font-display font-semibold text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
@@ -20,14 +20,14 @@ export function Contact() {
 
         <div className="reveal mt-12 flex flex-wrap items-center gap-4">
           <a
-            href="mailto:hello@example.com"
+            href="mailto:eugen.ranow2005@gmail.com"
             className="group inline-flex items-center gap-3 rounded-full bg-primary px-7 py-4 text-base font-medium text-primary-foreground transition-all hover:gap-4 hover:shadow-[0_10px_40px_-10px_var(--glow)]"
           >
-            hello@example.com
+            eugen.ranow2005@gmail.com
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            Replies within a day
+            Based in Stockholm · Open to internships
           </span>
         </div>
 
@@ -36,7 +36,7 @@ export function Contact() {
             <a
               key={s.label}
               href={s.href}
-              target="_blank"
+              target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
               className="reveal-up group flex items-center justify-between border-b border-border pb-4 transition-colors hover:border-primary"
               style={{ animationDelay: `${i * 80}ms` }}
@@ -52,7 +52,7 @@ export function Contact() {
         </div>
 
         <footer className="reveal mt-20 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-muted-foreground">
-          <span>© {new Date().getFullYear()} — cs.dev</span>
+          <span>© {new Date().getFullYear()} — Eugen Ranow</span>
           <span>Designed & built from scratch</span>
         </footer>
       </div>
