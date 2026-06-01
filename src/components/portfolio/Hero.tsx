@@ -15,22 +15,22 @@ export function Hero() {
       <div className="mx-auto w-full max-w-6xl">
         <p className="reveal font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-primary align-middle animate-pulse" />
-          M.Sc. Computer Science · KTH · Stockholm
+          Selected Projects · 2023 — Present
         </p>
 
         <h1 className="reveal mt-8 font-display font-semibold text-[clamp(3rem,9vw,7.5rem)] leading-[0.95] tracking-tight">
-          Eugen <span className="text-gradient">Ranow</span>
+          Things I <span className="text-gradient">build</span>.
           <br />
-          <span className="text-muted-foreground">building software that ships.</span>
+          <span className="text-muted-foreground">AI, games & software.</span>
         </h1>
 
         <div className="reveal mt-10 grid gap-8 sm:grid-cols-[1fr_auto] sm:items-end">
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Second-year M.Sc. student at KTH working across{" "}
-            <span className="text-foreground">AI engineering</span>,{" "}
-            <span className="text-foreground">game development</span>, and{" "}
-            <span className="text-foreground">data analysis</span>. Currently
-            seeking an internship or summer position.
+            A working archive of{" "}
+            <span className="text-foreground">AI pipelines</span>,{" "}
+            <span className="text-foreground">Unity games</span>, and{" "}
+            <span className="text-foreground">open source tools</span> — built
+            to ship, not to sit in a folder.
           </p>
           <div className="flex items-center gap-3">
             <a
@@ -52,15 +52,13 @@ export function Hero() {
         <div className="reveal mt-24 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-border pt-8 font-mono text-xs uppercase tracking-widest text-muted-foreground">
           <span>Python</span>
           <span className="text-border">·</span>
-          <span>Java</span>
-          <span className="text-border">·</span>
           <span>C# / Unity</span>
-          <span className="text-border">·</span>
-          <span>SQL</span>
           <span className="text-border">·</span>
           <span>Go</span>
           <span className="text-border">·</span>
-          <span>AI / LLMs</span>
+          <span>SQL</span>
+          <span className="text-border">·</span>
+          <span>LLMs</span>
         </div>
       </div>
 

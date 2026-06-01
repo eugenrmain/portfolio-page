@@ -1,27 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
-import { About } from "@/components/portfolio/About";
 import { Skills } from "@/components/portfolio/Skills";
 import { Projects } from "@/components/portfolio/Projects";
-import { Experience } from "@/components/portfolio/Experience";
 import { Contact } from "@/components/portfolio/Contact";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Eugen Ranow — M.Sc. Computer Science @ KTH" },
+      { title: "Eugen Ranow — Projects in AI, Games & Software" },
       {
         name: "description",
         content:
-          "Portfolio of a Computer Science student building games, tools, and AI experiments with Python, C#, Unity, and modern ML.",
+          "A project-focused portfolio: AI pipelines, Unity games, open source tools, and software experiments built with Python, C#, Go and SQL.",
       },
-      { property: "og:title", content: "CS Student Portfolio — Python, C#, Unity & AI" },
+      { property: "og:title", content: "Eugen Ranow — Projects in AI, Games & Software" },
       {
         property: "og:description",
         content:
-          "Selected projects in game development, AI, and software craft by a CS student.",
+          "Selected projects in AI engineering, game development, and software craft.",
       },
     ],
     links: [
@@ -40,13 +38,10 @@ function Index() {
   useReveal();
   return (
     <main className="relative grain">
-      
       <Nav />
       <Hero />
-      <About />
-      <Skills />
       <Projects />
-      <Experience />
+      <Skills />
       <Contact />
     </main>
   );

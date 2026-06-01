@@ -70,9 +70,6 @@ export function Skills() {
           ))}
         </div>
 
-        <p className="reveal mt-10 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-          Languages — Swedish (native) · English (fluent) · Spanish (basics)
-        </p>
       </div>
     </section>
   );

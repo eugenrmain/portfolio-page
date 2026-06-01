@@ -67,7 +67,7 @@ export function Projects() {
       <div className="mx-auto max-w-6xl">
         <div className="reveal flex items-center gap-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span className="h-px w-8 bg-border" />
-          03 — Selected work
+          01 — Selected work
         </div>
         <div className="reveal mt-6 flex flex-wrap items-end justify-between gap-6">
           <h2 className="font-display font-semibold text-4xl leading-[1.05] tracking-tight sm:text-6xl max-w-2xl">
