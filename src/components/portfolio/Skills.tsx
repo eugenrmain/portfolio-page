@@ -40,7 +40,7 @@ export function Skills() {
           02 — Skills
         </div>
         <h2 className="reveal mt-6 font-display font-semibold text-4xl leading-[1.05] tracking-tight sm:text-6xl max-w-3xl">
-          The tools I reach for <span className="text-primary">first</span>.
+          My primary <span className="text-primary">tools</span>.
         </h2>
 
         <div className="mt-16 divide-y divide-border border-y border-border">
