@@ -46,6 +46,7 @@ function Index() {
       <About />
       <Skills />
       <Projects />
+      <Experience />
       <Contact />
     </main>
   );
