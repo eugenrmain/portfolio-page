@@ -12,11 +12,14 @@ type Project = {
   image?: string | null;
 };
 
-const projects: Project[] = [
+type Category = "AI" | "Games" | "Web & Data" | "Open Source";
+
+const projects: (Project & { category: Category })[] = [
   {
     title: "Quantera AI — Indexing Pipeline",
     year: "2026",
     role: "AI Engineer · Project Course",
+    category: "AI",
     stack: ["Python", "LLMs", "SQLite", "AI"],
     desc: "Designing a two-stage AI-based indexing pipeline for a financial startup. Extracting unstructured data with LLMs and optimizing cost via smart context filtering across small + large models. Built in an agile team of eight.",
     href: "#",
@@ -26,7 +29,8 @@ const projects: Project[] = [
     title: "Unity 3D Games",
     year: "2023 — Present",
     role: "Solo Developer",
-    stack: ["C#", "Unity", "Game Dev"],
+    category: "Games",
+    stack: ["C#", "Unity", "Game Dev", "Netcode"],
     desc: "Designed and built several 3D games for single-player and co-op from scratch. Hands-on with physics, mechanics, animation, and network programming via Unity NGO (Netcode for GameObjects).",
     href: "#",
     image: null,
@@ -35,7 +39,8 @@ const projects: Project[] = [
     title: "Collaborative Fitness App",
     year: "2024",
     role: "API & Database Lead",
-    stack: ["Python", "OpenAI", "SQL"],
+    category: "Web & Data",
+    stack: ["Python", "OpenAI", "SQL", "AI"],
     desc: "Team-built fitness application where I owned external API integration (OpenAI / ChatGPT) and implemented the database layer. End-to-end collaborative software development.",
     href: "#",
     image: null,
@@ -44,22 +49,30 @@ const projects: Project[] = [
     title: "Open Source Tools & Bots",
     year: "2024 — Present",
     role: "Contributor",
-    stack: ["Python", "Go", "Git"],
+    category: "Open Source",
+    stack: ["Python", "Go", "Git", "Automation"],
     desc: "Active contributor on GitHub — issues, bug fixes, and PRs. Adapted open source code into personal tools including an automated Google Maps web scraper and a crypto trading bot.",
     href: "https://github.com",
     image: null,
   },
 ];
 
-const allTags = ["All", ...Array.from(new Set(projects.flatMap((p) => p.stack)))];
+const categories: ("All" | Category)[] = ["All", "AI", "Games", "Web & Data", "Open Source"];
+const allStackTags = Array.from(new Set(projects.flatMap((p) => p.stack))).sort();
 
 export function Projects() {
-  const [filter, setFilter] = useState<string>("All");
+  const [category, setCategory] = useState<"All" | Category>("All");
+  const [tag, setTag] = useState<string | null>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const filtered = useMemo(
-    () => (filter === "All" ? projects : projects.filter((p) => p.stack.includes(filter))),
-    [filter],
+    () =>
+      projects.filter((p) => {
+        const matchCategory = category === "All" || p.category === category;
+        const matchTag = !tag || p.stack.includes(tag);
+        return matchCategory && matchTag;
+      }),
+    [category, tag],
   );
 
   return (
