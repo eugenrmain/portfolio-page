@@ -3,7 +3,6 @@ import { useEffect } from "react";
 export function useReveal() {
   useEffect(() => {
     const selector = ".reveal, .reveal-up, .reveal-left, .reveal-right";
-    const els = document.querySelectorAll<HTMLElement>(selector);
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -15,7 +14,31 @@ export function useReveal() {
       },
       { threshold: 0.08, rootMargin: "0px 0px -10% 0px" },
     );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+
+    const observeAll = (root: ParentNode = document) => {
+      root.querySelectorAll<HTMLElement>(selector).forEach((el) => {
+        if (!el.classList.contains("in")) io.observe(el);
+      });
+    };
+
+    observeAll();
+
+    // Watch for dynamically added nodes (e.g. when project filters change)
+    const mo = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        m.addedNodes.forEach((n) => {
+          if (n instanceof HTMLElement) {
+            if (n.matches?.(selector)) io.observe(n);
+            observeAll(n);
+          }
+        });
+      }
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      io.disconnect();
+      mo.disconnect();
+    };
   }, []);
 }
