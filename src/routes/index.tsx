@@ -39,7 +39,7 @@ function Index() {
   useReveal();
   return (
     <main className="relative grain">
-      <div className="top-vignette" aria-hidden />
+      
       <Nav />
       <Hero />
       <About />
