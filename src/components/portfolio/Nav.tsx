@@ -41,8 +41,8 @@ export function Nav() {
         scrolled ? "py-3" : "py-5"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#home" className="group flex items-center gap-2">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 sm:px-8">
+        <a href="#home" className="hidden sm:flex group items-center gap-2">
           <span className="font-display text-xl tracking-tight">
             <span className="text-primary">/</span>cs.dev
           </span>
