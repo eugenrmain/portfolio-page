@@ -1,33 +1,33 @@
 const skills = [
   {
     name: "Python",
-    desc: "Data pipelines, scripting, ML prototyping with PyTorch & scikit-learn.",
-    years: "4y",
+    desc: "AI pipelines, LLM tooling, data analysis, web scrapers and automation.",
     tag: "Primary",
   },
   {
-    name: "C#",
-    desc: "Game logic, gameplay systems, and tooling inside the .NET ecosystem.",
-    years: "3y",
-    tag: "Daily",
+    name: "Java",
+    desc: "Coursework at KTH — algorithms, data structures, and OOP fundamentals.",
+    tag: "Academic",
   },
   {
-    name: "Unity",
-    desc: "2D & 3D prototypes, shaders, and editor extensions. Published demos on itch.io.",
-    years: "3y",
+    name: "C# / Unity",
+    desc: "3D single-player and co-op games, physics, animation, and Netcode for GameObjects.",
     tag: "Creative",
   },
   {
-    name: "GitHub",
-    desc: "Branching workflows, code review, CI/CD with Actions, open-source contributions.",
-    years: "4y",
-    tag: "Collab",
+    name: "C & Go",
+    desc: "Systems-level programming, performance-sensitive tools and services.",
+    tag: "Systems",
   },
   {
-    name: "AI / ML",
-    desc: "Neural nets, transformer fine-tuning, prompt engineering, vector search.",
-    years: "2y",
-    tag: "Research",
+    name: "SQL / Databases",
+    desc: "SQLite, relational modelling, query design — Database Technology @ KTH.",
+    tag: "Data",
+  },
+  {
+    name: "Git / GitHub",
+    desc: "Branching, code review, PRs, and active open source contribution.",
+    tag: "Collab",
   },
 ];
 
@@ -66,12 +66,13 @@ export function Skills() {
                   {s.desc}
                 </p>
               </div>
-              <span className="font-mono text-xs text-muted-foreground tabular-nums">
-                {s.years}
-              </span>
             </article>
           ))}
         </div>
+
+        <p className="reveal mt-10 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+          Languages — Swedish (native) · English (fluent) · Spanish (basics)
+        </p>
       </div>
     </section>
   );

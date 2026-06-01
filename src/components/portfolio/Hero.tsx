@@ -10,32 +10,27 @@ export function Hero() {
           className="absolute right-10 top-1/4 h-[340px] w-[340px] rounded-full bg-accent/20 blur-[110px] animate-aurora"
           style={{ animationDelay: "2s" }}
         />
-        <div
-          className="absolute left-10 bottom-10 h-[300px] w-[300px] rounded-full bg-[oklch(0.72_0.20_340/0.18)] blur-[120px] animate-aurora"
-          style={{ animationDelay: "4s" }}
-        />
       </div>
 
       <div className="mx-auto w-full max-w-6xl">
         <p className="reveal font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-primary align-middle animate-pulse" />
-          Computer Science · Class of 2026
+          M.Sc. Computer Science · KTH · Stockholm
         </p>
 
         <h1 className="reveal mt-8 font-display font-semibold text-[clamp(3rem,9vw,7.5rem)] leading-[0.95] tracking-tight">
-          Building <span className="text-gradient">thoughtful</span>
+          Eugen <span className="text-gradient">Ranow</span>
           <br />
-          software, one commit
-          <br className="sm:hidden" />
-          <span className="text-muted-foreground"> at a time.</span>
+          <span className="text-muted-foreground">building software that ships.</span>
         </h1>
 
         <div className="reveal mt-10 grid gap-8 sm:grid-cols-[1fr_auto] sm:items-end">
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-            CS student working at the intersection of{" "}
-            <span className="text-foreground">game development</span>,{" "}
-            <span className="text-foreground">artificial intelligence</span>, and{" "}
-            <span className="text-foreground">clean engineering</span>.
+            Second-year M.Sc. student at KTH working across{" "}
+            <span className="text-foreground">AI engineering</span>,{" "}
+            <span className="text-foreground">game development</span>, and{" "}
+            <span className="text-foreground">data analysis</span>. Currently
+            seeking an internship or summer position.
           </p>
           <div className="flex items-center gap-3">
             <a
@@ -46,10 +41,10 @@ export function Hero() {
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
             <a
-              href="#about"
+              href="#contact"
               className="rounded-full border border-border px-6 py-3 text-sm transition-colors hover:border-foreground"
             >
-              About
+              Get in touch
             </a>
           </div>
         </div>
@@ -57,13 +52,15 @@ export function Hero() {
         <div className="reveal mt-24 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-border pt-8 font-mono text-xs uppercase tracking-widest text-muted-foreground">
           <span>Python</span>
           <span className="text-border">·</span>
-          <span>C#</span>
+          <span>Java</span>
           <span className="text-border">·</span>
-          <span>Unity</span>
+          <span>C# / Unity</span>
           <span className="text-border">·</span>
-          <span>GitHub</span>
+          <span>SQL</span>
           <span className="text-border">·</span>
-          <span>AI / ML</span>
+          <span>Go</span>
+          <span className="text-border">·</span>
+          <span>AI / LLMs</span>
         </div>
       </div>
 
