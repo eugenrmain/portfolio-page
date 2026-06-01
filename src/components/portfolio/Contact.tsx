@@ -1,8 +1,8 @@
 const socials = [
   { label: "Email", href: "mailto:eugen.ranow2005@gmail.com" },
   { label: "Phone", href: "tel:+46721525858" },
-  { label: "GitHub", href: "https://github.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "GitHub", href: "https://github.com/eugenrmain" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/eugen-ranow-a093a6324/" },
 ];
 
 export function Contact() {
@@ -53,7 +53,6 @@ export function Contact() {
 
         <footer className="reveal mt-20 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-muted-foreground">
           <span>© {new Date().getFullYear()} — Eugen Ranow</span>
-          <span>Designed & built from scratch</span>
         </footer>
       </div>
     </section>
