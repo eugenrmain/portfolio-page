@@ -48,7 +48,7 @@ export function Nav() {
           </span>
         </a>
         <nav
-          className={`hidden md:flex items-center gap-1 rounded-full glass px-2 py-1.5 text-sm transition-all duration-500 ${
+          className={`flex items-center gap-0.5 sm:gap-1 rounded-full glass px-1.5 sm:px-2 py-1 sm:py-1.5 text-xs sm:text-sm transition-all duration-500 ${
             scrolled ? "shadow-[0_8px_30px_-12px_var(--glow)]" : ""
           }`}
         >
@@ -56,7 +56,7 @@ export function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className={`relative rounded-full px-4 py-1.5 transition-colors ${
+              className={`relative rounded-full px-2.5 sm:px-4 py-1 sm:py-1.5 transition-colors ${
                 active === l.href.slice(1)
                   ? "text-primary-foreground"
                   : "text-muted-foreground hover:text-foreground"
