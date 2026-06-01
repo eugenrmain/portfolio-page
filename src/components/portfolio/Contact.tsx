@@ -15,7 +15,7 @@ export function Contact() {
         </div>
 
         <h2 className="reveal mt-8 font-display font-semibold text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
-          Eugen Ranow
+          Let's build something <span className="text-primary">together</span>.
         </h2>
 
         <div className="reveal mt-12 flex flex-wrap items-center gap-4">
