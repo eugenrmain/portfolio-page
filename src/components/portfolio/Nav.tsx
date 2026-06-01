@@ -42,11 +42,8 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 sm:px-8">
-        <a href="#home" className="hidden sm:flex group items-center gap-2">
-          <span className="font-display text-xl tracking-tight">
-            <span className="text-primary">/</span>cs.dev
-          </span>
-        </a>
+        <div className="hidden sm:block w-20" aria-hidden />
+
         <nav
           className={`flex items-center gap-0.5 sm:gap-1 rounded-full glass px-1.5 sm:px-2 py-1 sm:py-1.5 text-xs sm:text-sm transition-all duration-500 ${
             scrolled ? "shadow-[0_8px_30px_-12px_var(--glow)]" : ""
