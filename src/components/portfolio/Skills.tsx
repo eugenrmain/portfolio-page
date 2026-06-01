@@ -55,7 +55,7 @@ export function Skills() {
               </span>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <h3 className="font-display text-3xl tracking-tight transition-transform duration-500 group-hover:translate-x-2 sm:text-5xl">
+                  <h3 className="font-display font-semibold text-3xl tracking-tight transition-all duration-500 group-hover:translate-x-2 group-hover:text-primary sm:text-5xl">
                     {s.name}
                   </h3>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-primary">
