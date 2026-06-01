@@ -96,22 +96,58 @@ export function Projects() {
           </a>
         </div>
 
-        {/* Filter chips — demo logic for sorting projects by stack */}
+        {/* Category groups */}
         <div className="reveal mt-8 flex flex-wrap gap-2">
-          {allTags.map((tag) => (
+          {categories.map((c) => (
             <button
-              key={tag}
+              key={c}
               type="button"
-              onClick={() => setFilter(tag)}
+              onClick={() => {
+                setCategory(c);
+                setTag(null);
+              }}
               className={`rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-widest transition-all ${
-                filter === tag
+                category === c
                   ? "border-primary bg-primary text-primary-foreground"
                   : "border-border text-muted-foreground hover:border-primary/60 hover:text-foreground"
               }`}
             >
-              {tag}
+              {c}
             </button>
           ))}
+        </div>
+
+        {/* Stack/skill tags — click to toggle */}
+        <div className="reveal mt-3 flex flex-wrap gap-2">
+          {allStackTags.map((t) => {
+            const active = tag === t;
+            return (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setTag(active ? null : t)}
+                className={`rounded-full border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest transition-all ${
+                  active
+                    ? "border-primary text-primary"
+                    : "border-border/60 text-muted-foreground hover:border-primary/60 hover:text-foreground"
+                }`}
+              >
+                {t}
+              </button>
+            );
+          })}
+          {(tag || category !== "All") && (
+            <button
+              type="button"
+              onClick={() => {
+                setTag(null);
+                setCategory("All");
+              }}
+              className="rounded-full border border-border/60 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground hover:text-foreground"
+            >
+              clear ✕
+            </button>
+          )}
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
