@@ -11,7 +11,7 @@ export function Contact() {
       <div className="mx-auto max-w-6xl">
         <div className="reveal flex items-center gap-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span className="h-px w-8 bg-border" />
-          05 — Contact
+          03 — Contact
         </div>
 
         <h2 className="reveal mt-8 font-display font-semibold text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
