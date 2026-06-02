@@ -6,10 +6,14 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import quanteraDemo from "@/assets/quantera-demo.gif";
+import quanteraPipeline from "@/assets/quantera-pipeline.png";
 
 type Slide = {
   image?: string | null;
   caption: string;
+  /** When true, image src is re-assigned on activation so GIFs restart from frame 1. */
+  replayOnActive?: boolean;
 };
 
 type Project = {
@@ -36,9 +40,16 @@ const projects: (Project & { category: Category })[] = [
     href: "#",
     image: null,
     slides: [
-      { caption: "Pipeline overview — two-stage LLM extraction architecture." },
-      { caption: "Context filtering layer routes between small + large models to cut cost." },
-      { caption: "SQLite store for structured outputs and audit trail." },
+      {
+        image: quanteraDemo,
+        caption: "Live demo — querying the indexed financial dataset end-to-end.",
+        replayOnActive: true,
+      },
+      {
+        image: quanteraPipeline,
+        caption:
+          "Pipeline architecture — data prep (PDF/Excel → markdown → low-cost AI categorisation → SQLite index) feeds an API layer that fetches user prompts, retrieves the relevant files and generates the final answer with a stronger model.",
+      },
     ],
   },
   {
