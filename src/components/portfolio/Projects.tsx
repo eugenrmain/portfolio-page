@@ -48,9 +48,9 @@ const projects: (Project & { category: Category })[] = [
         replayOnActive: true,
       },
       {
-        image: quanteraPipeline,
+        content: <QuanteraPipeline />,
         caption:
-          "Pipeline architecture — data prep (PDF/Excel → markdown → low-cost AI categorisation → SQLite index) feeds an API layer that fetches user prompts, retrieves the relevant files and generates the final answer with a stronger model.",
+          "Pipeline architecture — PDF/Excel inputs are converted to markdown, categorised by a low-cost model and indexed in SQLite. The API layer combines master prompts, the user query and indexed data, then routes context to a stronger model for the final answer.",
       },
     ],
   },
