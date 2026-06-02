@@ -1,4 +1,16 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+
+type Slide = {
+  image?: string | null;
+  caption: string;
+};
 
 type Project = {
   title: string;
@@ -7,9 +19,8 @@ type Project = {
   stack: string[];
   desc: string;
   href: string;
-  // To add an image, set `image` to a URL or an imported asset
-  // (e.g. drop a file at public/projects/quantera.jpg and use "/projects/quantera.jpg").
   image?: string | null;
+  slides?: Slide[];
 };
 
 type Category = "AI" | "Games" | "Web & Data" | "Open Source";
@@ -24,6 +35,11 @@ const projects: (Project & { category: Category })[] = [
     desc: "Designing a two-stage AI-based indexing pipeline for a financial startup. Extracting unstructured data with LLMs and optimizing cost via smart context filtering across small + large models. Built in an agile team of eight.",
     href: "#",
     image: null,
+    slides: [
+      { caption: "Pipeline overview — two-stage LLM extraction architecture." },
+      { caption: "Context filtering layer routes between small + large models to cut cost." },
+      { caption: "SQLite store for structured outputs and audit trail." },
+    ],
   },
   {
     title: "Unity 3D Games",
@@ -34,6 +50,11 @@ const projects: (Project & { category: Category })[] = [
     desc: "Designed and built several 3D games for single-player and co-op from scratch. Hands-on with physics, mechanics, animation, and network programming via Unity NGO (Netcode for GameObjects).",
     href: "#",
     image: null,
+    slides: [
+      { caption: "Co-op gameplay built on Unity Netcode for GameObjects." },
+      { caption: "Custom character controller, physics & animation rigging." },
+      { caption: "Level design and lighting passes in URP." },
+    ],
   },
   {
     title: "Collaborative Fitness App",
@@ -44,6 +65,11 @@ const projects: (Project & { category: Category })[] = [
     desc: "Team-built fitness application where I owned external API integration (OpenAI / ChatGPT) and implemented the database layer. End-to-end collaborative software development.",
     href: "#",
     image: null,
+    slides: [
+      { caption: "OpenAI integration powering personalized workout suggestions." },
+      { caption: "Relational schema for users, sessions and progress tracking." },
+      { caption: "Team workflow — agile sprints, code reviews, shared ownership." },
+    ],
   },
   {
     title: "Open Source Tools & Bots",
@@ -54,6 +80,11 @@ const projects: (Project & { category: Category })[] = [
     desc: "Active contributor on GitHub — issues, bug fixes, and PRs. Adapted open source code into personal tools including an automated Google Maps web scraper and a crypto trading bot.",
     href: "https://github.com",
     image: null,
+    slides: [
+      { caption: "Google Maps scraper — automated lead extraction at scale." },
+      { caption: "Crypto trading bot — strategy backtests and live execution." },
+      { caption: "Upstream PRs & issue triage across multiple repos." },
+    ],
   },
 ];
 
@@ -63,7 +94,8 @@ const allStackTags = Array.from(new Set(projects.flatMap((p) => p.stack))).sort(
 export function Projects() {
   const [category, setCategory] = useState<"All" | Category>("All");
   const [tag, setTag] = useState<string | null>(null);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [modalIndex, setModalIndex] = useState<number | null>(null);
+  const [slide, setSlide] = useState(0);
 
   const filtered = useMemo(
     () =>
@@ -74,6 +106,26 @@ export function Projects() {
       }),
     [category, tag],
   );
+
+  const active = modalIndex !== null ? filtered[modalIndex] : null;
+  const slides: Slide[] = active?.slides?.length
+    ? active.slides
+    : [{ caption: active?.desc ?? "" }];
+
+  useEffect(() => {
+    if (modalIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") setSlide((s) => (s + 1) % slides.length);
+      if (e.key === "ArrowLeft") setSlide((s) => (s - 1 + slides.length) % slides.length);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [modalIndex, slides.length]);
+
+  const openProject = (i: number) => {
+    setModalIndex(i);
+    setSlide(0);
+  };
 
   return (
     <section id="projects" className="relative px-5 sm:px-8 py-32">
@@ -117,17 +169,17 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Stack/skill tags — click to toggle */}
+        {/* Stack/skill tags */}
         <div className="reveal mt-3 flex flex-wrap gap-2">
           {allStackTags.map((t) => {
-            const active = tag === t;
+            const isActive = tag === t;
             return (
               <button
                 key={t}
                 type="button"
-                onClick={() => setTag(active ? null : t)}
+                onClick={() => setTag(isActive ? null : t)}
                 className={`rounded-full border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest transition-all ${
-                  active
+                  isActive
                     ? "border-primary text-primary"
                     : "border-border/60 text-muted-foreground hover:border-primary/60 hover:text-foreground"
                 }`}
@@ -151,15 +203,18 @@ export function Projects() {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {filtered.map((p, i) => {
-            const isOpen = openIndex === i;
-            return (
-              <article
-                key={p.title}
-                className="reveal-up group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_60px_-20px_var(--glow)]"
-                style={{ animationDelay: `${i * 100}ms` }}
+          {filtered.map((p, i) => (
+            <article
+              key={p.title}
+              className="reveal-up group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_60px_-20px_var(--glow)]"
+              style={{ animationDelay: `${i * 100}ms` }}
+            >
+              <button
+                type="button"
+                onClick={() => openProject(i)}
+                className="block w-full text-left"
+                aria-label={`Open ${p.title}`}
               >
-                {/* Image / placeholder slot */}
                 <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-surface">
                   {p.image ? (
                     <img
@@ -169,7 +224,7 @@ export function Projects() {
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_30%_30%,var(--glow),transparent_60%)] font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                      add image — projects/{p.title.toLowerCase().split(" ")[0]}.jpg
+                      click to view — {p.title.toLowerCase().split(" ")[0]}
                     </div>
                   )}
                 </div>
@@ -182,11 +237,7 @@ export function Projects() {
                   <h3 className="mt-4 font-display font-semibold text-2xl tracking-tight transition-colors group-hover:text-primary sm:text-3xl">
                     {p.title}
                   </h3>
-                  <p
-                    className={`mt-3 text-sm leading-relaxed text-muted-foreground transition-all ${
-                      isOpen ? "" : "line-clamp-3"
-                    }`}
-                  >
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground line-clamp-3">
                     {p.desc}
                   </p>
                   <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
@@ -200,18 +251,14 @@ export function Projects() {
                         </span>
                       ))}
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => setOpenIndex(isOpen ? null : i)}
-                      className="font-mono text-[11px] uppercase tracking-widest text-primary transition-colors hover:text-foreground"
-                    >
-                      {isOpen ? "− less" : "+ more"}
-                    </button>
+                    <span className="font-mono text-[11px] uppercase tracking-widest text-primary">
+                      view →
+                    </span>
                   </div>
                 </div>
-              </article>
-            );
-          })}
+              </button>
+            </article>
+          ))}
         </div>
 
         {filtered.length === 0 && (
@@ -220,6 +267,121 @@ export function Projects() {
           </p>
         )}
       </div>
+
+      {/* Project modal with carousel */}
+      <Dialog
+        open={modalIndex !== null}
+        onOpenChange={(o) => {
+          if (!o) setModalIndex(null);
+        }}
+      >
+        <DialogContent
+          className="max-w-4xl w-[calc(100vw-2rem)] gap-0 border-border/60 bg-card/95 p-0 backdrop-blur-xl shadow-[0_30px_120px_-20px_var(--glow)] sm:rounded-2xl [&>button]:hidden"
+        >
+          {active && (
+            <>
+              {/* Header */}
+              <div className="flex items-start justify-between gap-4 border-b border-border/60 px-6 py-5 sm:px-8">
+                <div className="min-w-0">
+                  <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                    <span className="text-primary">
+                      {String((modalIndex ?? 0) + 1).padStart(2, "0")} / {String(filtered.length).padStart(2, "0")}
+                    </span>
+                    <span className="h-px w-6 bg-border" />
+                    <span>{active.year}</span>
+                  </div>
+                  <DialogTitle className="mt-2 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                    {active.title}
+                  </DialogTitle>
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    {active.stack.join(" · ")}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setModalIndex(null)}
+                  className="shrink-0 rounded-full border border-border/60 p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                  aria-label="Close"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+
+              {/* Carousel */}
+              <div className="relative">
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-surface">
+                  {slides[slide]?.image ? (
+                    <img
+                      key={slide}
+                      src={slides[slide].image as string}
+                      alt={`${active.title} — slide ${slide + 1}`}
+                      className="h-full w-full animate-fade-in object-cover"
+                    />
+                  ) : (
+                    <div
+                      key={slide}
+                      className="flex h-full w-full animate-fade-in items-center justify-center bg-[radial-gradient(circle_at_30%_30%,var(--glow),transparent_60%)] px-6 text-center font-mono text-[11px] uppercase tracking-widest text-muted-foreground"
+                    >
+                      slide {slide + 1} — add image
+                    </div>
+                  )}
+                </div>
+
+                {slides.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setSlide((s) => (s - 1 + slides.length) % slides.length)}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-border/60 bg-background/60 p-2 text-foreground backdrop-blur-md transition-all hover:border-primary hover:text-primary"
+                      aria-label="Previous slide"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSlide((s) => (s + 1) % slides.length)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-border/60 bg-background/60 p-2 text-foreground backdrop-blur-md transition-all hover:border-primary hover:text-primary"
+                      aria-label="Next slide"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </>
+                )}
+              </div>
+
+              {/* Caption + dots */}
+              <div className="px-6 py-5 sm:px-8">
+                <DialogDescription asChild>
+                  <p
+                    key={slide}
+                    className="min-h-[3rem] animate-fade-in text-sm leading-relaxed text-muted-foreground sm:text-base"
+                  >
+                    {slides[slide]?.caption}
+                  </p>
+                </DialogDescription>
+
+                {slides.length > 1 && (
+                  <div className="mt-5 flex items-center justify-center gap-2">
+                    {slides.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setSlide(i)}
+                        aria-label={`Go to slide ${i + 1}`}
+                        className={`h-1.5 rounded-full transition-all ${
+                          i === slide
+                            ? "w-6 bg-primary"
+                            : "w-1.5 bg-border hover:bg-muted-foreground"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
