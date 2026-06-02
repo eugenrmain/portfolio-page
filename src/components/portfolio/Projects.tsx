@@ -6,12 +6,13 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import quanteraDemo from "@/assets/quantera-demo.gif";
+import quanteraDemo from "@/assets/quantera-demo.mp4.asset.json";
 import { QuanteraPipeline } from "./QuanteraPipeline";
 import type { ReactNode } from "react";
 
 type Slide = {
   image?: string | null;
+  video?: string | null;
   content?: ReactNode;
   caption: string;
   /** When true, image src is re-assigned on activation so GIFs restart from frame 1. */
@@ -43,7 +44,7 @@ const projects: (Project & { category: Category })[] = [
     image: null,
     slides: [
       {
-        image: quanteraDemo,
+        video: quanteraDemo.url,
         caption: "Live demo - Querying the indexed financial dataset",
         replayOnActive: true,
       },
@@ -323,7 +324,17 @@ export function Projects() {
               {/* Carousel */}
               <div className="relative">
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-surface">
-                  {slides[slide]?.image ? (
+                  {slides[slide]?.video ? (
+                    <video
+                      key={slide}
+                      src={slides[slide].video as string}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="h-full w-full animate-fade-in object-cover"
+                    />
+                  ) : slides[slide]?.image ? (
                     <img
                       key={slide}
                       src={slides[slide].image as string}
