@@ -7,10 +7,12 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import quanteraDemo from "@/assets/quantera-demo.gif";
-import quanteraPipeline from "@/assets/quantera-pipeline.png";
+import { QuanteraPipeline } from "./QuanteraPipeline";
+import type { ReactNode } from "react";
 
 type Slide = {
   image?: string | null;
+  content?: ReactNode;
   caption: string;
   /** When true, image src is re-assigned on activation so GIFs restart from frame 1. */
   replayOnActive?: boolean;
@@ -46,9 +48,9 @@ const projects: (Project & { category: Category })[] = [
         replayOnActive: true,
       },
       {
-        image: quanteraPipeline,
+        content: <QuanteraPipeline />,
         caption:
-          "Pipeline architecture — data prep (PDF/Excel → markdown → low-cost AI categorisation → SQLite index) feeds an API layer that fetches user prompts, retrieves the relevant files and generates the final answer with a stronger model.",
+          "Pipeline architecture — PDF/Excel inputs are converted to markdown, categorised by a low-cost model and indexed in SQLite. The API layer combines master prompts, the user query and indexed data, then routes context to a stronger model for the final answer.",
       },
     ],
   },
@@ -328,6 +330,10 @@ export function Projects() {
                       alt={`${active.title} — slide ${slide + 1}`}
                       className="h-full w-full animate-fade-in object-cover"
                     />
+                  ) : slides[slide]?.content ? (
+                    <div key={slide} className="h-full w-full animate-fade-in">
+                      {slides[slide].content}
+                    </div>
                   ) : (
                     <div
                       key={slide}
