@@ -50,7 +50,7 @@ const projects: (Project & { category: Category })[] = [
       {
         content: <QuanteraPipeline />,
         caption:
-          "Pipeline architecture — PDF/Excel inputs are converted to markdown, categorised by a low-cost model and indexed in SQLite. The API layer combines master prompts, the user query and indexed data, then routes context to a stronger model for the final answer.",
+          "Pipeline architecture - PDF/Excel inputs are converted to markdown, categorised by a low-cost model and indexed in SQLite. The API layer combines master prompts, the user query and indexed data, then routes context to a stronger model for the final answer.",
       },
     ],
   },
