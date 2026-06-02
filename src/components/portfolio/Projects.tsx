@@ -276,7 +276,7 @@ export function Projects() {
         }}
       >
         <DialogContent
-          className="max-w-4xl w-[calc(100vw-2rem)] gap-0 border-border/60 bg-transparent p-0 shadow-[0_30px_120px_-20px_var(--glow)] sm:rounded-2xl [&>button]:hidden"
+          className="max-w-4xl w-[calc(100vw-2rem)] gap-0 border-border/60 bg-card p-0 shadow-[0_30px_120px_-20px_var(--glow)] sm:rounded-2xl [&>button]:hidden"
         >
           {active && (
             <>
