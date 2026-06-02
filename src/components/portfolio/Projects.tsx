@@ -7,10 +7,12 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import quanteraDemo from "@/assets/quantera-demo.gif";
-import quanteraPipeline from "@/assets/quantera-pipeline.png";
+import { QuanteraPipeline } from "./QuanteraPipeline";
+import type { ReactNode } from "react";
 
 type Slide = {
   image?: string | null;
+  content?: ReactNode;
   caption: string;
   /** When true, image src is re-assigned on activation so GIFs restart from frame 1. */
   replayOnActive?: boolean;
