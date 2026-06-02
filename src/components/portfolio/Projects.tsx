@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import quanteraLogo from "@/assets/quantera-logo.png.asset.json";
 
 type Project = {
   title: string;
@@ -20,7 +21,7 @@ const projects: Project[] = [
     stack: ["Python", "LLMs", "SQLite", "AI"],
     desc: "Developed a two-stage AI-based indexing pipeline for a financial startup. Extracting unstructured data with LLMs and optimizing cost via smart context filtering across small + large models. Built in an agile team of eight.",
     href: "#",
-    image: null,
+    image: quanteraLogo.url,
   },
   {
     title: "Unity 3D Games",
@@ -111,12 +112,12 @@ export function Projects() {
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 {/* Image / placeholder slot */}
-                <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-surface">
+                <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-black">
                   {p.image ? (
                     <img
                       src={p.image}
                       alt={p.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_30%_30%,var(--glow),transparent_60%)] font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
