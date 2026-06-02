@@ -2,7 +2,7 @@ const socials = [
   { label: "Email", href: "mailto:eugen.ranow2005@gmail.com" },
   { label: "Phone", href: "tel:+46721525858" },
   { label: "GitHub", href: "https://github.com/eugenrmain" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/eugen-ranow-a093a6324/" },
+  { label: "LinkedIn", href: "www.linkedin.com/in/eugen-ranow-a093a6324" },
 ];
 
 export function Contact() {
@@ -15,7 +15,7 @@ export function Contact() {
         </div>
 
         <h2 className="reveal mt-8 font-display font-semibold text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
-          Let's build something <span className="text-primary">together</span>.
+          Eugen Ranow
         </h2>
 
         <div className="reveal mt-12 flex flex-wrap items-center gap-4">
