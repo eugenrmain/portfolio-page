@@ -21,7 +21,7 @@ const projects: Project[] = [
     stack: ["Python", "LLMs", "SQLite", "AI"],
     desc: "Developed a two-stage AI-based indexing pipeline for a financial startup. Extracting unstructured data with LLMs and optimizing cost via smart context filtering across small + large models. Built in an agile team of eight.",
     href: "#",
-    image: null,
+    image: quanteraLogo.url,
   },
   {
     title: "Unity 3D Games",
