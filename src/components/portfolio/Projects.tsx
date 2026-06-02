@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import quanteraLogo from "@/assets/quantera-logo.png.asset.json";
 
 type Project = {
   title: string;
