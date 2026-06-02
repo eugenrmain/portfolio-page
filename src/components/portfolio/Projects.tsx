@@ -44,7 +44,7 @@ const projects: (Project & { category: Category })[] = [
     slides: [
       {
         image: quanteraDemo,
-        caption: "Live demo — querying the indexed financial dataset end-to-end.",
+        caption: "Live demo - Querying the indexed financial dataset",
         replayOnActive: true,
       },
       {
