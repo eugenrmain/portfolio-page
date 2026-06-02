@@ -330,6 +330,10 @@ export function Projects() {
                       alt={`${active.title} — slide ${slide + 1}`}
                       className="h-full w-full animate-fade-in object-cover"
                     />
+                  ) : slides[slide]?.content ? (
+                    <div key={slide} className="h-full w-full animate-fade-in">
+                      {slides[slide].content}
+                    </div>
                   ) : (
                     <div
                       key={slide}
