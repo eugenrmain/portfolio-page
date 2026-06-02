@@ -324,7 +324,17 @@ export function Projects() {
               {/* Carousel */}
               <div className="relative">
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-surface">
-                  {slides[slide]?.image ? (
+                  {slides[slide]?.video ? (
+                    <video
+                      key={slide}
+                      src={slides[slide].video as string}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="h-full w-full animate-fade-in object-cover"
+                    />
+                  ) : slides[slide]?.image ? (
                     <img
                       key={slide}
                       src={slides[slide].image as string}
