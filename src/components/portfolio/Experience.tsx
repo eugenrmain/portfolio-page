@@ -42,19 +42,25 @@ const education = [
 
 export function Experience() {
   return (
-    <section id="experience" className="relative px-5 sm:px-8 py-32 bg-surface/40">
+    <section id="experience" className="relative px-5 sm:px-8 py-32">
       <div className="mx-auto max-w-6xl">
         <div className="reveal flex items-center gap-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span className="h-px w-8 bg-border" />
-          04 — Experience & Education
+          03 — Experience & Education
         </div>
 
         <div className="mt-16 grid gap-16 lg:grid-cols-2">
           <div>
-            <h3 className="reveal font-display font-semibold text-3xl tracking-tight sm:text-4xl">Experience</h3>
+            <h3 className="reveal font-display font-semibold text-3xl tracking-tight sm:text-4xl">
+              Experience
+            </h3>
             <ol className="mt-8 space-y-8 border-l border-border pl-6">
               {experience.map((e, i) => (
-                <li key={e.role + e.org} className="reveal-up relative" style={{ animationDelay: `${i * 100}ms` }}>
+                <li
+                  key={e.role + e.org}
+                  className="reveal-up relative"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
                   <span className="absolute -left-[31px] top-2 h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_0_4px_var(--background)]" />
                   <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
                     {e.when} · {e.where}
@@ -69,10 +75,16 @@ export function Experience() {
           </div>
 
           <div>
-            <h3 className="reveal font-display font-semibold text-3xl tracking-tight sm:text-4xl">Education</h3>
+            <h3 className="reveal font-display font-semibold text-3xl tracking-tight sm:text-4xl">
+              Education
+            </h3>
             <ol className="mt-8 space-y-8 border-l border-border pl-6">
               {education.map((e, i) => (
-                <li key={e.school} className="reveal-up relative" style={{ animationDelay: `${i * 100}ms` }}>
+                <li
+                  key={e.school}
+                  className="reveal-up relative"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
                   <span className="absolute -left-[31px] top-2 h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_0_4px_var(--background)]" />
                   <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
                     {e.when} · {e.where}

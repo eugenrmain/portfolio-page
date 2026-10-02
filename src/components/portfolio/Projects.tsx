@@ -1,13 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
-import quanteraLogo from "@/assets/quantera-logo.png.asset.json";
-import quanteraDemo from "@/assets/quantera-demo.mp4.asset.json";
+import { ChevronLeft, ChevronRight, Github, X } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import quanteraLogo from "@/assets/quantera-logo.png";
+import quanteraDemo from "@/assets/quantera-demo.mp4";
+import unityLogo from "@/assets/unity-logo.png";
 import { QuanteraPipeline } from "./QuanteraPipeline";
 import type { ReactNode } from "react";
 
@@ -26,21 +22,24 @@ type Project = {
   desc: string;
   href: string;
   image?: string | null;
+  imageClassName?: string;
+  cover?: ReactNode;
   slides?: Slide[];
 };
 
 const projects: Project[] = [
   {
-    title: "Quantera AI — Indexing Pipeline",
+    title: "Quantera AI - Indexing Pipeline",
     year: "2026",
     role: "AI Engineer · Project Course",
     stack: ["Python", "LLMs", "SQLite", "AI"],
     desc: "Developed a two-stage AI-based indexing pipeline for a financial startup. Extracting unstructured data with LLMs and optimizing cost via smart context filtering across small + large models. Built in an agile team of eight.",
     href: "#",
-    image: quanteraLogo.url,
+    image: quanteraLogo,
+    imageClassName: "p-8 sm:p-12",
     slides: [
       {
-        video: quanteraDemo.url,
+        video: quanteraDemo,
         caption: "Live demo - Querying the indexed financial dataset",
       },
       {
@@ -57,7 +56,7 @@ const projects: Project[] = [
     stack: ["C#", "Unity", "Game Dev"],
     desc: "Designed and built several 3D multiplayer games from scratch. Implemented physics, mechanics, animation, and network programming via Unity NGO.",
     href: "#",
-    image: null,
+    image: unityLogo,
   },
   {
     title: "Collaborative Fitness App",
@@ -75,7 +74,13 @@ const projects: Project[] = [
     stack: ["Python", "Go", "Git"],
     desc: "Active contributor on GitHub - issues, bug fixes, and PRs. Adapted open source code into personal tools including an automated Google Maps web scraper and a crypto trading bot.",
     href: "https://github.com/eugenrmain",
-    image: null,
+    cover: (
+      <Github
+        className="h-28 w-28 text-white sm:h-36 sm:w-36"
+        strokeWidth={1.5}
+        aria-hidden="true"
+      />
+    ),
   },
 ];
 
@@ -112,7 +117,7 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="relative px-5 sm:px-8 py-32">
+    <section id="projects" className="relative px-5 sm:px-8 pt-56 pb-32">
       <div className="mx-auto max-w-6xl">
         <div className="reveal flex items-center gap-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span className="h-px w-8 bg-border" />
@@ -167,8 +172,12 @@ export function Projects() {
                     <img
                       src={p.image}
                       alt={p.title}
-                      className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                      className={`h-full w-full object-contain transition-transform duration-700 group-hover:scale-105 ${p.imageClassName ?? ""}`}
                     />
+                  ) : p.cover ? (
+                    <div className="flex h-full w-full items-center justify-center bg-black transition-transform duration-700 group-hover:scale-105">
+                      {p.cover}
+                    </div>
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_30%_30%,var(--glow),transparent_60%)] font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                       click to view — {p.title.toLowerCase().split(" ")[0]}
@@ -221,16 +230,15 @@ export function Projects() {
           if (!o) setModalIndex(null);
         }}
       >
-        <DialogContent
-          className="max-w-4xl w-[calc(100vw-2rem)] gap-0 border-border/60 bg-card p-0 shadow-[0_30px_120px_-20px_var(--glow)] sm:rounded-2xl [&>button]:hidden"
-        >
+        <DialogContent className="max-w-4xl w-[calc(100vw-2rem)] gap-0 border-border/60 bg-card p-0 shadow-[0_30px_120px_-20px_var(--glow)] sm:rounded-2xl [&>button]:hidden">
           {active && (
             <>
               <div className="flex items-start justify-between gap-4 border-b border-border/60 px-6 py-5 sm:px-8">
                 <div className="min-w-0">
                   <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                     <span className="text-primary">
-                      {String((modalIndex ?? 0) + 1).padStart(2, "0")} / {String(filtered.length).padStart(2, "0")}
+                      {String((modalIndex ?? 0) + 1).padStart(2, "0")} /{" "}
+                      {String(filtered.length).padStart(2, "0")}
                     </span>
                     <span className="h-px w-6 bg-border" />
                     <span>{active.year}</span>

@@ -153,9 +153,7 @@ export function QuanteraPipeline() {
               {n.label}
             </div>
             {n.sub && (
-              <div className="mt-0.5 text-[8px] italic leading-tight text-white/40">
-                {n.sub}
-              </div>
+              <div className="mt-0.5 text-[8px] italic leading-tight text-white/40">{n.sub}</div>
             )}
           </div>
         </div>

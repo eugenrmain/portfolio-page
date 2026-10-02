@@ -4,6 +4,8 @@ const links = [
   { href: "#home", label: "Home" },
   { href: "#projects", label: "Work" },
   { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -50,7 +52,7 @@ export function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className={`relative rounded-full px-2.5 sm:px-4 py-1 sm:py-1.5 transition-colors ${
+              className={`relative rounded-full px-2 sm:px-4 py-1 sm:py-1.5 transition-colors ${
                 active === l.href.slice(1)
                   ? "text-primary-foreground"
                   : "text-muted-foreground hover:text-foreground"

@@ -1,17 +1,6 @@
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="relative flex min-h-screen items-center overflow-hidden px-5 sm:px-8 pt-32"
-    >
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-1/3 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/25 blur-[130px] animate-aurora" />
-        <div
-          className="absolute right-10 top-1/4 h-[340px] w-[340px] rounded-full bg-accent/20 blur-[110px] animate-aurora"
-          style={{ animationDelay: "2s" }}
-        />
-      </div>
-
+    <section id="home" className="relative flex items-center overflow-hidden px-5 sm:px-8 pt-32">
       <div className="mx-auto w-full max-w-6xl">
         <p className="reveal font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-primary align-middle animate-pulse" />
@@ -26,8 +15,7 @@ export function Hero() {
 
         <div className="reveal mt-10 grid gap-8 sm:grid-cols-[1fr_auto] sm:items-end">
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-            A working archive of{" "}
-            <span className="text-foreground">AI pipelines</span>,{" "}
+            A working archive of <span className="text-foreground">AI pipelines</span>,{" "}
             <span className="text-foreground">Unity games</span>, and{" "}
             <span className="text-foreground">open source tools</span>.
           </p>
@@ -57,10 +45,6 @@ export function Hero() {
           <span className="text-border">·</span>
           <span className="flex flex-col items-center">LLMS</span>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs text-muted-foreground font-mono">
-        <span className="animate-pulse">scroll ↓</span>
       </div>
     </section>
   );

@@ -33,7 +33,7 @@ const skills = [
 
 export function Skills() {
   return (
-    <section id="skills" className="relative px-5 sm:px-8 py-32 bg-surface/40">
+    <section id="skills" className="relative px-5 sm:px-8 py-32">
       <div className="mx-auto max-w-6xl">
         <div className="reveal flex items-center gap-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span className="h-px w-8 bg-border" />
@@ -50,15 +50,21 @@ export function Skills() {
               className="reveal-up group grid grid-cols-[auto_1fr_auto] items-center gap-6 py-6 transition-colors hover:bg-foreground/[0.02] sm:gap-12 sm:py-8"
               style={{ animationDelay: `${i * 80}ms` }}
             >
-              <span className="font-mono text-xs text-muted-foreground tabular-nums w-10">0{i + 1}</span>
+              <span className="font-mono text-xs text-muted-foreground tabular-nums w-10">
+                0{i + 1}
+              </span>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                   <h3 className="font-display font-semibold text-3xl tracking-tight transition-all duration-500 group-hover:translate-x-2 group-hover:text-primary sm:text-5xl">
                     {s.name}
                   </h3>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-primary">{s.tag}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-primary">
+                    {s.tag}
+                  </span>
                 </div>
-                <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">{s.desc}</p>
+                <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {s.desc}
+                </p>
               </div>
             </article>
           ))}

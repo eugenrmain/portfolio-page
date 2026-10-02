@@ -93,11 +93,7 @@
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.66 0.09 245 / 0.10), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 30%, oklch(0.72 0.06 220 / 0.06), transparent 60%),
-      radial-gradient(ellipse 50% 40% at 0% 70%, oklch(0.55 0.08 235 / 0.05), transparent 60%);
-    background-attachment: fixed;
+
   }
   ::selection { background: var(--primary); color: var(--primary-foreground); }
 }
@@ -155,18 +151,52 @@
   }
 
   section { position: relative; }
-  section + section::before {
-    content: "";
+}
+
+@layer components {
+  .page-ambience {
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 160px;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 650px at 68% 3%, rgb(25 79 130 / 0.22), transparent 78%),
+      radial-gradient(ellipse 65% 800px at 0% 22%, rgb(16 64 114 / 0.25), transparent 80%),
+      radial-gradient(ellipse 48% 650px at 95% 40%, rgb(28 54 125 / 0.22), transparent 78%),
+      radial-gradient(ellipse 60% 850px at 20% 60%, rgb(12 72 106 / 0.20), transparent 80%),
+      radial-gradient(ellipse 55% 700px at 90% 79%, rgb(22 61 132 / 0.24), transparent 80%),
+      radial-gradient(ellipse 65% 650px at 30% 100%, rgb(15 67 114 / 0.20), transparent 80%);
+  }
+
+  .viewport-fade {
+    position: fixed;
+    inset: auto 0 0;
+    height: clamp(88px, 15vh, 170px);
+    z-index: 40;
     pointer-events: none;
     background: linear-gradient(
       to bottom,
-      var(--background) 0%,
-      color-mix(in oklab, var(--background) 70%, transparent) 45%,
-      transparent 100%
+      transparent 0%,
+      rgb(3 12 22 / 0.18) 30%,
+      rgb(2 8 16 / 0.55) 65%,
+      rgb(0 2 6 / 0.96) 100%
     );
-    z-index: 1;
+  }
+
+  .viewport-fade::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 20%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 20%, black 100%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .viewport-fade::before {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
   }
 }
