@@ -25,10 +25,12 @@ jobs:
           bun-version: 1.4.2
       - run: bun install --frozen-lockfile
       - run: bun run typecheck
-      - run: bun run build --base=/portfolio-page/
+      - run: bun run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /portfolio-page
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: out
 
   deploy:
     needs: build
