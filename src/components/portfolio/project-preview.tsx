@@ -3,7 +3,6 @@
 import { useId, type CSSProperties } from "react";
 import { GithubLogoIcon } from "@phosphor-icons/react";
 import { ParticleScene } from "@/components/portfolio/particle-scene";
-import { ApexTelemetry } from "@/components/portfolio/apex-preview";
 import { mediaPath } from "@/lib/portfolio";
 import { useVisibleSvg } from "./use-visible-svg";
 import quantera from "@/assets/quantera-logo.png";
@@ -97,7 +96,19 @@ export function ProjectPreview({ id }: { id: string }) {
   if (id === "apex")
     return (
       <div className="apex-card-visual" aria-hidden="true">
-        <ApexTelemetry />
+        <div className="apex-card-brand">
+          <img src={mediaPath("/media/apex/icon.svg")} alt="" width="64" height="64" />
+          <span>Apex Desktop</span>
+        </div>
+        <img
+          className="apex-card-screen"
+          src={mediaPath("/media/apex/home.webp")}
+          alt=""
+          width="1086"
+          height="753"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     );
   if (id === "fitness") return <FitnessPreview />;

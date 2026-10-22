@@ -51,13 +51,13 @@ export const projects = [
   },
   {
     id: "apex",
-    title: "Apex Desktop - PC Optimizer & Utility",
+    title: "Apex Desktop — Windows utility",
     category: "Native Windows software",
     year: "2026–present",
     role: "Native systems & telemetry",
     stack: ["C#", ".NET", "WinUI 3", "Win32 APIs"],
     description:
-      "Open-source native Windows 11 PC optimizer utilizing Win32 APIs and P/Invoke for system performance, asynchronous local media compression pipelines, and real-time hardware telemetry tracking.",
+      "An open-source Windows app for system tools, local media compression, and live hardware monitoring. It idles in the background at under 0.1% CPU.",
     detail:
       "A WinUI 3 frontend connects to native Windows services through P/Invoke and Win32 APIs, alongside asynchronous media compression and hardware monitoring.",
   },

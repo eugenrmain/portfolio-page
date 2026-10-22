@@ -502,7 +502,7 @@ body::before {
   width: 270px;
   height: 165px;
   max-height: none;
-  left: 0;
+  left: -30px;
   top: -26px;
 }
 .logo-preview .particle-scene {
@@ -2244,140 +2244,58 @@ body > [data-state][class*="bg-black/80"] {
   margin-bottom: 5px;
 }
 .project-card-apex .project-card-copy {
-  padding-top: 50px;
-}
-.project-card-apex .project-card-visual::after {
-  background: linear-gradient(90deg, #03070be6, #060a1460 50%, transparent 83%);
-}
-.apex-card-visual .apex-visual-label {
-  display: none;
+  padding-top: 100px;
+  width: 58%;
 }
 .apex-card-visual {
   position: absolute;
-  inset: 0 0 0 64%;
+  inset: 0;
+  overflow: hidden;
+  background: transparent;
 }
-.apex-telemetry {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  padding: 25px 18px;
-  position: relative;
-  min-width: 0;
-}
-.apex-visual-label {
-  font: 8px var(--mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #b4c9e9;
-}
-.apex-gauges {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px 14px;
-  max-width: 200px;
-  width: 100%;
-}
-.apex-gauge {
-  position: relative;
-  width: 100%;
-  max-width: 70px;
-  justify-self: center;
-  aspect-ratio: 1;
-}
-.apex-gauge.gauge-0 {
-  grid-column: 1 / -1;
-  max-width: 90px;
-}
-.apex-gauge svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  transform: rotate(-90deg);
-}
-.apex-gauge circle {
-  fill: none;
-  stroke-width: 1.6;
-}
-.gauge-track {
-  stroke: #8bbaec22;
-}
-.gauge-value {
-  stroke: #82d9ff;
-  stroke-linecap: round;
-  filter: drop-shadow(0 0 4px #72cbff88);
-  transition: stroke-dasharray 1.2s var(--ease-out);
-}
-.gauge-1 .gauge-value {
-  stroke: #a59aff;
-}
-.gauge-2 .gauge-value {
-  stroke: #b6dcff;
-}
-.apex-gauge > div {
+.apex-card-visual::after {
+  content: "";
   position: absolute;
   inset: 0;
+  background: linear-gradient(90deg, #050812a0 30%, transparent 70%);
+  pointer-events: none;
+}
+/* Flame plus wordmark set in the site's Geist, sized to sit level with the Quantera logo. */
+.apex-card-brand {
+  position: absolute;
+  left: 26px;
+  top: 33px;
+  z-index: 2;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 3px;
+  gap: 12px;
+  color: #eef3fb;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
-.apex-gauge strong {
-  color: #dfedff;
-  font: 15px var(--mono);
-  font-variant-numeric: tabular-nums;
+.apex-card-brand img {
+  width: 40px;
+  height: 40px;
 }
-.apex-gauge small {
-  font-size: 8px;
-  color: #a8c9ee;
-  margin-left: 2px;
+.apex-card-screen {
+  position: absolute;
+  width: 74%;
+  height: auto;
+  max-width: none;
+  right: -24%;
+  top: 74px;
+  border: 1px solid #a5baff30;
+  border-radius: 10px;
+  opacity: 0.92;
+  mask-image: linear-gradient(90deg, transparent 4%, #000 38%), linear-gradient(180deg, #000 62%, transparent 96%);
+  mask-composite: intersect;
+  box-shadow: 0 24px 60px #000a;
+  transition: transform 0.65s var(--ease-out);
 }
-.apex-gauge span {
-  font: 7px var(--mono);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #a8bfdf;
-}
-.gauge-0 strong {
-  font-size: 21px;
-}
-.apex-throughput {
-  width: 100%;
-  max-width: 185px;
-  display: grid;
-  gap: 10px;
-}
-.apex-throughput > div {
-  display: grid;
-  grid-template-columns: 55px 1fr;
-  align-items: center;
-  gap: 9px;
-}
-.apex-throughput span {
-  color: #a7c0e1;
-  font: 7px var(--mono);
-}
-.apex-throughput i {
-  height: 3px;
-  background: #90b9f01a;
-  overflow: hidden;
-  border-radius: 2px;
-}
-.apex-throughput b {
-  display: block;
-  height: 100%;
-  width: 100%;
-  transform-origin: left;
-  background: linear-gradient(90deg, #67cfff, #b1a1ff);
-  transition: transform 1.2s var(--ease-out);
-}
-.apex-visual-note {
-  color: #9db5d5;
-  font: 6px/1.6 var(--mono);
-  text-align: center;
+.project-card-apex:hover .apex-card-screen {
+  transform: translate(-5px, -5px);
 }
 .project-dialog-preview:has(.apex-project) {
   height: auto;
@@ -2388,98 +2306,90 @@ body > [data-state][class*="bg-black/80"] {
   border: 1px solid #ffffff18;
   border-radius: 9px;
   overflow: hidden;
-  background: #ffffff02;
 }
-.apex-demo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  min-height: 380px;
+.apex-screenshots {
+  padding: 20px;
 }
-.apex-demo-grid > .apex-telemetry {
-  border-right: 1px solid #ffffff14;
-  padding: 30px;
-  gap: 24px;
-}
-.apex-demo-grid .apex-gauges {
-  max-width: 230px;
-}
-.apex-demo-grid .apex-gauge {
-  max-width: 85px;
-}
-.apex-demo-grid .gauge-0 {
-  max-width: 115px;
-}
-.apex-demo-grid .apex-visual-note {
-  display: none;
-}
-.apex-compression {
-  padding: 32px;
-}
-.apex-compression h3 {
-  font-size: 25px;
-  font-weight: 450;
-  line-height: 1.3;
-  letter-spacing: -0.025em;
-  margin-top: 14px;
-}
-.apex-job-stages {
-  margin: 25px 0;
-  display: grid;
-  gap: 15px;
-  list-style: none;
-  padding: 0;
-}
-.apex-job-stages li {
+.apex-image-options {
   display: flex;
-  gap: 14px;
-  align-items: center;
-  color: #9db4d4;
-  font: 11px/1.5 var(--mono);
+  gap: 10px;
+  overflow-x: auto;
+  padding: 1px 1px 15px;
+  scrollbar-width: thin;
 }
-.apex-job-stages li > span {
-  font-size: 8px;
-  color: #8fa7cc;
+.apex-image-options button {
+  flex: 0 0 112px;
+  padding: 6px;
+  border: 1px solid #ffffff17;
+  border-radius: 6px;
+  background: #ffffff03;
+  text-align: left;
+  color: #aebed8;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
-.apex-job-stages i {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #758eaf;
-  margin-left: auto;
+.apex-image-options button:hover,
+.apex-image-options button[aria-pressed="true"] {
+  border-color: #87beed8c;
+  background: #a3c9ff0c;
+  color: #eef5ff;
 }
-.apex-job-stages [data-active="true"] {
-  color: #d4e6ff;
+.apex-image-options button:focus-visible,
+.apex-capture figcaption a:focus-visible {
+  outline: 2px solid #9ddaff;
+  outline-offset: 3px;
 }
-.apex-job-stages [data-active="true"] i {
-  background: #86dbff;
-  box-shadow: 0 0 9px #86dbff88;
-}
-.apex-job-progress {
-  height: 3px;
-  background: #ffffff12;
-  overflow: hidden;
-  border-radius: 2px;
-}
-.apex-job-progress > span {
+.apex-image-options img {
   display: block;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #74d5ff, #ad8fff);
-  transform-origin: left;
-  transition: transform 0.15s var(--ease-out);
+  height: 60px;
+  object-fit: contain;
+  border-radius: 3px;
+  background: #080d19;
 }
-.apex-job-status {
+.apex-image-options span {
+  display: block;
+  padding: 8px 2px 3px;
+  font: 10px/1.3 var(--mono);
+}
+.apex-capture {
+  margin: 0;
+}
+.apex-capture-stage {
+  display: flex;
+  justify-content: center;
+  min-height: 180px;
+}
+/* The frame hugs the capture itself, so constrained heights never letterbox. */
+.apex-capture-stage > img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 560px;
+  border: 1px solid #ffffff16;
+  border-radius: 6px;
+}
+.apex-capture figcaption {
   display: flex;
   justify-content: space-between;
-  font: 9px var(--mono);
-  color: #b2c8e7;
-  margin: 12px 0 20px;
+  align-items: start;
+  gap: 20px;
+  padding: 14px 1px 0;
+  color: #acbed9;
+  font-size: 12px;
+  line-height: 1.65;
 }
-.apex-demo-note {
-  border-top: 1px solid #ffffff12;
-  padding: 15px 20px;
-  font: 10px/1.7 var(--mono);
-  color: #adc0dd;
+.apex-capture figcaption a {
+  flex-shrink: 0;
+  color: #d5e9ff;
+  text-decoration: none;
+  border-bottom: 1px solid #b7d3ef55;
+  padding-bottom: 2px;
+}
+.apex-capture figcaption a span {
+  margin-left: 5px;
 }
 .apex-architecture {
   padding: 30px;
@@ -2563,16 +2473,6 @@ body > [data-state][class*="bg-black/80"] {
   }
 }
 @media (max-width: 1000px) {
-  .apex-card-visual {
-    left: 65%;
-  }
-  .apex-card-visual .apex-telemetry {
-    padding-inline: 10px;
-  }
-  .apex-card-visual .apex-throughput > div {
-    grid-template-columns: 40px 1fr;
-    gap: 5px;
-  }
   .apex-stage-track {
     gap: 20px;
   }
@@ -2583,72 +2483,56 @@ body > [data-state][class*="bg-black/80"] {
     max-width: 100%;
     text-align: left;
   }
+  .project-card-apex .project-card-copy {
+    width: 70%;
+  }
 }
 @media (max-width: 700px) {
   .apex-card-visual {
-    position: relative;
-    inset: auto;
     width: 100%;
     height: 100%;
   }
-  .apex-card-visual .apex-telemetry {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 16px;
+  .apex-card-brand {
+    top: 26px;
+    left: 20px;
+    font-size: 26px;
   }
-  .apex-card-visual .apex-visual-label {
-    grid-column: 1 / -1;
-    text-align: center;
+  .apex-card-brand img {
+    width: 34px;
+    height: 34px;
   }
-  .apex-card-visual .apex-gauges {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    max-width: 210px;
+  .apex-card-screen {
+    right: -4%;
+    top: auto;
+    bottom: -28%;
+    width: 72%;
+    opacity: 0.85;
   }
-  .apex-card-visual .apex-gauge {
-    width: 55px;
-    flex-shrink: 0;
-  }
-  .apex-card-visual .gauge-0 {
-    max-width: 55px;
-  }
-  .apex-card-visual .gauge-0 strong {
-    font-size: 15px;
-  }
-  .apex-card-visual .apex-visual-note {
-    grid-column: 1 / -1;
+  .apex-card-visual::after {
+    inset: 95px 0 0;
+    background: linear-gradient(90deg, #0b102144, transparent);
   }
   .project-card-apex .project-card-copy {
-    padding-top: 25px;
+    padding-top: 24px;
+    width: 100%;
   }
-  .apex-demo-grid {
-    grid-template-columns: 1fr;
+  .apex-screenshots {
+    padding: 12px;
   }
-  .apex-demo-grid > .apex-telemetry {
-    border-right: 0;
-    border-bottom: 1px solid #ffffff14;
-    padding: 25px;
+  .apex-image-options {
+    gap: 8px;
   }
-  .apex-demo-grid .apex-gauges {
-    display: flex;
-    max-width: 285px;
-    gap: 18px;
+  .apex-image-options button {
+    flex-basis: 96px;
   }
-  .apex-demo-grid .apex-gauge {
-    width: 70px;
+  .apex-image-options img {
+    height: 51px;
   }
-  .apex-demo-grid .gauge-0 strong {
-    font-size: 15px;
+  .apex-capture figcaption {
+    flex-direction: column;
+    gap: 9px;
   }
-  .apex-compression {
-    padding: 25px 20px;
-  }
-  .apex-compression h3 {
-    font-size: 23px;
-  }
-  .apex-architecture {
+.apex-architecture {
     padding: 25px 20px;
   }
   .apex-stage-track {
@@ -2679,19 +2563,6 @@ body > [data-state][class*="bg-black/80"] {
   }
   .apex-stage-detail {
     min-height: 190px;
-  }
-  .apex-demo-note {
-    font-size: 9px;
-    padding: 15px 20px;
-  }
-}
-@media (max-width: 700px) {
-  .apex-card-visual .apex-gauges,
-  .apex-card-visual .apex-throughput {
-    justify-self: center;
-  }
-  .apex-card-visual .apex-throughput {
-    display: grid;
   }
 }
 @media (min-width: 701px) and (max-width: 1000px) {

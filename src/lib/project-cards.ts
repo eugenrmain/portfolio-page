@@ -3,7 +3,7 @@ import { projects } from "@/lib/portfolio";
 export const allProjects = [
   {
     id: "quantera",
-    title: "Quantera AI - Indexing Pipeline",
+    title: "Quantera AI — Indexing pipeline",
     category: "AI & data",
     year: "2026",
     role: "AI engineer · Team project",
