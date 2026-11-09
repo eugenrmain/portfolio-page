@@ -50,6 +50,18 @@ export const projects = [
       "A space to experiment with how games feel and how players interact. The work spans both gameplay code and the systems that keep a multiplayer session in sync.",
   },
   {
+    id: "tape31",
+    title: "Tape 31",
+    category: "Game development",
+    year: "2026",
+    role: "Game jam co-developer · Meta Game Jam",
+    stack: ["C#", "Unity", "Post-Processing", "Shader Graph"],
+    description:
+      "A first-person psychological horror game built in Unity for the Meta Game Jam with a friend. Features a 1990s VHS found-footage aesthetic, volumetric lighting, and environmental storytelling set in an abandoned research facility.",
+    detail:
+      "Developed under rapid game jam constraints, Tape 31 combines custom VHS post-processing, analog camcorder telemetry, dynamic lighting, and diegetic narrative logs to immerse players in an eerie 1997 investigation.",
+  },
+  {
     id: "apex",
     title: "Apex Desktop — Windows utility",
     category: "Native Windows software",

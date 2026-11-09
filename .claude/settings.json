@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./node_modules/**)",
+      "Read(./.next/**)",
+      "Read(./out/**)",
+      "Read(./dist/**)",
+      "Read(./coverage/**)"
+    ]
+  },
+  "enabledPlugins": {
+    "shadcn@local": true
+  }
+}

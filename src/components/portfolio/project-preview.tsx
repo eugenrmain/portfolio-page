@@ -111,6 +111,26 @@ export function ProjectPreview({ id }: { id: string }) {
         />
       </div>
     );
+  if (id === "tape31")
+    return (
+      <div className="tape31-card-visual" aria-hidden="true">
+        <div className="tape31-card-brand">
+          <span className="tape31-rec-dot" />
+          <span className="tape31-brand-rec">REC</span>
+          <span className="tape31-brand-title">TAPE 31</span>
+          <span className="tape31-brand-jam">OCT. 31 1997</span>
+        </div>
+        <img
+          className="tape31-card-screen"
+          src={mediaPath("/media/tape31/title.webp")}
+          alt=""
+          width="630"
+          height="500"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    );
   if (id === "fitness") return <FitnessPreview />;
   if (id === "opensource") return <OpenSourcePreview />;
   return (

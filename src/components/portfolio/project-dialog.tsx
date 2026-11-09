@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import { QuanteraDemo } from "@/components/portfolio/demo";
 import { ProjectStudy } from "@/components/portfolio/project-study";
 import { ApexProject } from "@/components/portfolio/apex-preview";
+import { Tape31Project } from "@/components/portfolio/tape31-preview";
 import { allProjects } from "@/lib/project-cards";
 import { profile } from "@/lib/portfolio";
 
@@ -40,6 +41,8 @@ export default function ProjectDialog({
                 <QuanteraDemo />
               ) : project.id === "apex" ? (
                 <ApexProject />
+              ) : project.id === "tape31" ? (
+                <Tape31Project />
               ) : (
                 <ProjectStudy id={project.id as "unity" | "fitness" | "opensource"} />
               )}

@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: { unoptimized: true },
   poweredByHeader: false,
+  agentRules: false, // stop `next dev` from writing AGENTS.md (instructions live in CLAUDE.md)
 };
 
 export default nextConfig;

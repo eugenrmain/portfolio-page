@@ -19,6 +19,8 @@ export const projectSummaries: Record<string, string> = {
     "A two-stage pipeline for financial documents, using small models to filter context for larger models. Built in a team of eight.",
   unity:
     "A commercial multiplayer game for Steam, targeting 2027. Built in Unity with movement, physics, animation, and networked systems.",
+  tape31:
+    "A 1990s found-footage psychological horror game built in Unity for Meta Game Jam. Features analog VHS aesthetics, volumetric lighting, and environmental investigation.",
   apex: projects.find((project) => project.id === "apex")!.description,
   fitness: "A team-built fitness app. I implemented the OpenAI integration and database layer.",
   opensource:
