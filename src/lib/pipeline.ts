@@ -14,7 +14,7 @@ export const pipelineNodes = [
     group: "response",
   },
   { id: "AL3", label: "Relevant file selection", group: "response" },
-  { id: "RG1", label: "Claude answer generation", group: "response" },
+  { id: "RG1", label: "LLM answer generation", group: "response" },
   { id: "RG2", label: "Final response to user", group: "response" },
 ] as const;
 

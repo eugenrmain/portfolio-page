@@ -58,6 +58,16 @@ export default function ProjectDialog({
                 View GitHub <ArrowUpRightIcon />
               </a>
             )}
+            {project.id === "tape31" && (
+              <a
+                className="glass-action"
+                href="https://eugenranow.itch.io/tape-31"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Play on itch.io <ArrowUpRightIcon />
+              </a>
+            )}
           </>
         )}
       </DialogContent>

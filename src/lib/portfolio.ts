@@ -53,13 +53,14 @@ export const projects = [
     id: "tape31",
     title: "Tape 31",
     category: "Game development",
-    year: "2026",
-    role: "Game jam co-developer · Meta Game Jam",
-    stack: ["C#", "Unity", "Post-Processing", "Shader Graph"],
+    year: "2024",
+    role: "Game Theory Fall Jam · 200+ views, ~100 downloads",
+    stack: ["C#", "Unity", "Shader Graph", "itch.io"],
     description:
-      "A first-person psychological horror game built in Unity for the Meta Game Jam with a friend. Features a 1990s VHS found-footage aesthetic, volumetric lighting, and environmental storytelling set in an abandoned research facility.",
+      "Developed a first-person 3D horror game for the Game Theory Fall Jam, generating 200+ views and nearly 100 downloads on itch.io. Built in Unity with analog VHS aesthetics, volumetric lighting, and environmental storytelling.",
     detail:
-      "Developed under rapid game jam constraints, Tape 31 combines custom VHS post-processing, analog camcorder telemetry, dynamic lighting, and diegetic narrative logs to immerse players in an eerie 1997 investigation.",
+      "A first-person 3D psychological horror game developed under rapid game jam constraints. Tape 31 blends custom VHS post-processing, analog camcorder telemetry, dynamic lighting, and diegetic narrative logs to immerse players in an eerie 1997 investigation.",
+    link: "https://eugenranow.itch.io/tape-31",
   },
   {
     id: "apex",

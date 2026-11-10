@@ -2547,6 +2547,18 @@ body > [data-state][class*="bg-black/80"] {
   color: #bccde5;
   max-width: 75ch;
 }
+.tape31-toolbar-link {
+  font: 11px var(--mono);
+  color: #ffd5dc;
+  text-decoration: none;
+  border-bottom: 1px solid #ff778855;
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tape31-toolbar-link:hover {
+  color: #fff;
+  border-color: #ff8899;
+}
 .tape31-project {
   border: 1px solid #ffffff18;
   border-radius: 9px;

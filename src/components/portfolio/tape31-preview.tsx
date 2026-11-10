@@ -45,7 +45,15 @@ export function Tape31Project() {
   return (
     <div className="tape31-project">
       <div className="demo-toolbar">
-        <span className="demo-project-name">Tape 31 / Meta Game Jam</span>
+        <span className="demo-project-name">Tape 31 / Game Theory Fall Jam</span>
+        <a
+          className="tape31-toolbar-link"
+          href="https://eugenranow.itch.io/tape-31"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Play on itch.io ↗
+        </a>
       </div>
 
       <div className="tape31-screenshots">

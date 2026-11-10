@@ -128,7 +128,7 @@ export function QuanteraPipeline() {
       <p className="sr-only" id={uid + "-description"}>
         PDF and Excel files are converted to markdown, categorised by a low-cost model, and indexed
         in SQLite. Master prompts supply preparation and retrieval prompts. The API retrieves
-        relevant files using the user query, then Claude generates the final response. Focus or
+        relevant files using the user query, then the language model generates the final response. Focus or
         select a stage to highlight its direct connections.
       </p>
       <svg ref={visual} className="pipeline-wires" aria-hidden="true">

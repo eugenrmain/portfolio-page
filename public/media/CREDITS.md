@@ -11,4 +11,4 @@
 
 ## Tape 31 showcase
 
-- `tape31/title.webp`, `tape31/corridor.webp`, `tape31/terminal.webp`, `tape31/chamber.webp`, `tape31/facility.webp`: in-game and title screen captures from Tape 31, a psychological found-footage horror game created for the Meta Game Jam by Eugen Ranow and co-developer; encoded in WebP for web delivery.
+- `tape31/title.webp`, `tape31/corridor.webp`, `tape31/terminal.webp`, `tape31/chamber.webp`, `tape31/facility.webp`: in-game and title screen captures from Tape 31, a psychological found-footage horror game created for the Game Theory Fall Jam by Eugen Ranow and co-developer; encoded in WebP for web delivery. Playable on itch.io (https://eugenranow.itch.io/tape-31).

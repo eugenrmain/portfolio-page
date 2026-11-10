@@ -35,4 +35,11 @@ dist-ssr
 .next/
 out/
 *.tsbuildinfo
+
+# Agent and AI tooling
+.claude/
+CLAUDE.md
+AGENTS.md
+ai/
 .taste-skill/
+.playwright-mcp/
