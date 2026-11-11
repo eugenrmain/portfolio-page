@@ -1,0 +1,26 @@
+1:"$Sreact.fragment"
+2:"static/chunks/552-fd59e9b4ec7ba728.js"
+3:"static/chunks/288-023b5c908c94988b.js"
+4:"static/chunks/app/page-54353948336113de.js"
+5:I[2946,["552","$2","288","$3","974","$4"],"SpaceField"]
+6:I[7121,[],""]
+7:I[4581,[],""]
+8:"static/chunks/app/not-found-7626c9df8073ade4.js"
+9:I[8500,["345","$8"],""]
+d:I[484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:"ViewportBoundary"
+11:I[484,[],"$10"]
+13:"MetadataBoundary"
+14:I[484,[],"$13"]
+16:I[7123,[],"default",1]
+:HL["/portfolio-page/_next/static/css/44de657fffc56a3f.css","style"]
+b:X
+c:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"className":"not-found site-container","children":[["$","p",null,{"children":"404"}],["$","h1",null,{"children":"Page not found"}],["$","p",null,{"children":"The page you’re looking for isn’t here."}],["$","$L9",null,{"href":"/","children":"Back to portfolio","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-[#f0ece3] h-11 px-5 py-2","ref":null}]]}],null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],"p":false,"v":null}}]]
+a:[["children",{"s":"_not-found","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$b"},"c":"$Qc"}]]
+0:{"P":null,"c":["","_not-found",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/portfolio-page/_next/static/css/44de657fffc56a3f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_28e62b __variable_b8fff8","children":["$","body",null,{"children":[["$","$L5",null,{}],["$","a",null,{"href":"#main","className":"skip-link","children":"Skip to content"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","main",null,{"className":"not-found site-container","children":[["$","p",null,{"children":"404"}],["$","h1",null,{"children":"Page not found"}],["$","p",null,{"children":"The page you’re looking for isn’t here."}],["$","$L9",null,{"href":"/","children":"Back to portfolio","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-[#f0ece3] h-11 px-5 py-2","ref":null}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}],"p":false,"v":null},"c":"$Qa"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L11",null,{"children":"$L12"}],["$","$L14",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$e",null,{"name":"Next.Metadata","children":"$L15"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$16",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"BubWPCCLbFWsHG7_oumdT"}
+b:C
+12:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+17:I[6869,[],"IconMark"]
+f:null
+15:[["$","title","0",{"children":"Eugen Ranow | AI, software & games"}],["$","meta","1",{"name":"description","content":"Selected work by Eugen Ranow, a third-year Computer Science and Engineering student at KTH in Stockholm. AI pipelines, software, and Unity games."}],["$","meta","2",{"name":"author","content":"Eugen Ranow"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","meta","4",{"property":"og:title","content":"Eugen Ranow"}],["$","meta","5",{"property":"og:description","content":"AI, software & games. Selected projects and background."}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","8",{"name":"twitter:title","content":"Eugen Ranow"}],["$","meta","9",{"name":"twitter:description","content":"AI, software & games. Selected projects and background."}],["$","link","10",{"rel":"icon","href":"/portfolio-page/icon.svg"}],["$","$L17","11",{}]]

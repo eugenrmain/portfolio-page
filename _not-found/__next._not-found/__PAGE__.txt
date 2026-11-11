@@ -1,0 +1,32 @@
+1:"$Sreact.fragment"
+2:"static/chunks/552-fd59e9b4ec7ba728.js"
+3:"static/chunks/288-023b5c908c94988b.js"
+4:"static/chunks/app/page-54353948336113de.js"
+5:I[2946,["552","$2","288","$3","974","$4"],"SpaceField"]
+6:I[7121,[],""]
+7:I[4581,[],""]
+8:"static/chunks/app/not-found-7626c9df8073ade4.js"
+9:I[8500,["345","$8"],""]
+10:I[484,[],"OutletBoundary"]
+11:"$Sreact.suspense"
+14:"ViewportBoundary"
+15:I[484,[],"$14"]
+16:"MetadataBoundary"
+17:I[484,[],"$16"]
+18:I[6869,[],"IconMark"]
+:HL["/portfolio-page/_next/static/css/44de657fffc56a3f.css","style"]
+b:X
+e:X
+e:C
+f:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"className":"not-found site-container","children":[["$","p",null,{"children":"404"}],["$","h1",null,{"children":"Page not found"}],["$","p",null,{"children":"The page you’re looking for isn’t here."}],["$","$L9",null,{"href":"/","children":"Back to portfolio","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-[#f0ece3] h-11 px-5 py-2","ref":null}]]}],null,["$","$L10",null,{"children":["$","$11",null,{"name":"Next.MetadataOutlet","children":"$@12"}]}]]}],"p":"$@13","v":null,"s":"$b"}}]]
+c:[["children",{"s":"_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","template":["$","$L7",null,{}]}]]}],"p":"$@d","v":"$e","s":"$b"},"c":"$Qf"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/portfolio-page/_next/static/css/44de657fffc56a3f.css","precedence":"next"}]],["$","html",null,{"lang":"en","className":"__variable_28e62b __variable_b8fff8","children":["$","body",null,{"children":[["$","$L5",null,{}],["$","a",null,{"href":"#main","className":"skip-link","children":"Skip to content"}],["$","$L6",null,{"parallelRouterKey":"children","template":["$","$L7",null,{}],"notFound":[["$","main",null,{"className":"not-found site-container","children":[["$","p",null,{"children":"404"}],["$","h1",null,{"children":"Page not found"}],["$","p",null,{"children":"The page you’re looking for isn’t here."}],["$","$L9",null,{"href":"/","children":"Back to portfolio","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-[#f0ece3] h-11 px-5 py-2","ref":null}]]}],[]]}]]}]}]]}],"p":"$@a","v":null,"s":"$b"},"c":"$Qc"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L17",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$11",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Eugen Ranow | AI, software & games"}],["$","meta","1",{"name":"description","content":"Selected work by Eugen Ranow, a third-year Computer Science and Engineering student at KTH in Stockholm. AI pipelines, software, and Unity games."}],["$","meta","2",{"name":"author","content":"Eugen Ranow"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","meta","4",{"property":"og:title","content":"Eugen Ranow"}],["$","meta","5",{"property":"og:description","content":"AI, software & games. Selected projects and background."}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","8",{"name":"twitter:title","content":"Eugen Ranow"}],["$","meta","9",{"name":"twitter:description","content":"AI, software & games. Selected projects and background."}],["$","link","10",{"rel":"icon","href":"/portfolio-page/icon.svg"}],["$","$L18","11",{}]]}]}],null]}],null]}],"p":"$@19","v":null,"s":"$b"}},"a":"$@1a","u":"$@1b","b":"BubWPCCLbFWsHG7_oumdT"}
+12:null
+b:300
+1b:true
+b:C
+1a:0
+d:"$undefined"
+a:"$undefined"
+19:"$undefined"
+13:"$undefined"
