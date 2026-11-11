@@ -43,3 +43,10 @@ AGENTS.md
 ai/
 .taste-skill/
 .playwright-mcp/
+
+# Internal documentation and notes
+DESIGN.md
+PROJECT_CONTEXT.md
+CREDITS.md
+public/media/CREDITS.md
+
