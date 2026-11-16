@@ -6,7 +6,6 @@ import { ProjectStudy } from "@/components/portfolio/project-study";
 import { ApexProject } from "@/components/portfolio/apex-preview";
 import { Tape31Project } from "@/components/portfolio/tape31-preview";
 import { allProjects } from "@/lib/project-cards";
-import { profile } from "@/lib/portfolio";
 
 export default function ProjectDialog({
   selected,
@@ -44,7 +43,7 @@ export default function ProjectDialog({
               ) : project.id === "tape31" ? (
                 <Tape31Project />
               ) : (
-                <ProjectStudy id={project.id as "unity" | "fitness" | "opensource"} />
+                <ProjectStudy id={project.id as "unity" | "fitness"} />
               )}
             </div>
             <p>{project.description}</p>
@@ -53,11 +52,6 @@ export default function ProjectDialog({
                 <li key={tech}>{tech}</li>
               ))}
             </ul>
-            {project.id === "opensource" && (
-              <a className="glass-action" href={profile.github} target="_blank" rel="noreferrer">
-                View GitHub <ArrowUpRightIcon />
-              </a>
-            )}
             {project.id === "tape31" && (
               <a
                 className="glass-action"

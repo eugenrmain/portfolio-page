@@ -1,7 +1,6 @@
 "use client";
 /* eslint-disable @next/next/no-img-element -- Preoptimized local assets in a static export need no image runtime. */
 import { useId, type CSSProperties } from "react";
-import { GithubLogoIcon } from "@phosphor-icons/react";
 import { ParticleScene } from "@/components/portfolio/particle-scene";
 import { mediaPath } from "@/lib/portfolio";
 import { useVisibleSvg } from "./use-visible-svg";
@@ -77,21 +76,6 @@ export function FitnessPreview({ expanded = false }: { expanded?: boolean }) {
     </div>
   );
 }
-function OpenSourcePreview() {
-  return (
-    <div className="opensource-preview" aria-hidden="true">
-      <GithubLogoIcon weight="fill" />
-      <div className="contribution-path">
-        {["Explore", "Build", "Contribute"].map((label, i) => (
-          <span className="contribution-step" key={label} style={{ animationDelay: `${i * 0.7}s` }}>
-            <i />
-            {label}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
 export function ProjectPreview({ id }: { id: string }) {
   if (id === "apex")
     return (
@@ -132,7 +116,6 @@ export function ProjectPreview({ id }: { id: string }) {
       </div>
     );
   if (id === "fitness") return <FitnessPreview />;
-  if (id === "opensource") return <OpenSourcePreview />;
   return (
     <div className={`logo-preview logo-preview-${id}`}>
       <div className="preview-grid" />

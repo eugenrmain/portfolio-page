@@ -23,6 +23,4 @@ export const projectSummaries: Record<string, string> = {
     "A first-person 3D horror game developed for the Game Theory Fall Jam, generating 200+ views and nearly 100 downloads on itch.io.",
   apex: projects.find((project) => project.id === "apex")!.description,
   fitness: "A team-built fitness app. I implemented the OpenAI integration and database layer.",
-  opensource:
-    "Open source contributions, bug fixes, and personal tools built with Python, Go, and Git.",
 };

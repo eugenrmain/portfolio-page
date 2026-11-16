@@ -86,28 +86,24 @@ export const projects = [
     detail:
       "My part connected the application to external services and stored its data. The project gave me experience working across API boundaries and coordinating implementation with a team.",
   },
-  {
-    id: "opensource",
-    title: "Open source tools & bots",
-    category: "Open source",
-    year: "2024–present",
-    role: "Contributor",
-    stack: ["Python", "Go", "Git"],
-    description:
-      "Contributions, bug fixes, and personal tools built from open source projects, including a Google Maps web scraper and a crypto trading bot.",
-    detail:
-      "I use GitHub to explore existing code, report issues, and contribute changes. These projects are a way to learn unfamiliar systems by making something useful with them.",
-  },
 ] as const;
 
 export const experience = [
   {
-    role: "Mathematics & STEM tutor",
-    company: "Studybuddy AB",
-    date: "2023–present",
+    role: "AI & data intern",
+    company: "SaltX Technology AB",
+    date: "Nov. 2026–present",
     location: "Stockholm",
     description:
-      "Tutoring secondary students in mathematics and science, using structured learning plans to explain complex concepts and develop problem-solving skills.",
+      "Architecting an internal data analysis platform MVP to centralize R&D process data, factory datasets, and TCO modeling. Evaluating AI-driven development workflows and collaborating across engineering teams to streamline data pipelines.",
+  },
+  {
+    role: "Mathematics & STEM tutor",
+    company: "Studybuddy AB",
+    date: "Aug. 2023–present",
+    location: "Stockholm",
+    description:
+      "Entering fourth consecutive year tutoring secondary students in advanced mathematics and science, using structured learning plans to explain complex concepts and develop problem-solving skills.",
   },
   {
     role: "Market & financial analyst intern",
@@ -115,7 +111,7 @@ export const experience = [
     date: "July 2022",
     location: "Zamora, Spain",
     description:
-      "Analyzed three years of financial data and market trends to support cost reduction and operational planning at a Spanish food company.",
+      "Analyzed three years of financial data and market trends to support cost reduction and operational planning.",
   },
   {
     role: "Software development & design intern",
@@ -123,7 +119,7 @@ export const experience = [
     date: "April 2019",
     location: "Södertälje",
     description:
-      "Contributed to front-end development workflows and analyzed competing digital platforms.",
+      "Contributed to front-end development workflows and conducted competitive analysis of digital platforms.",
   },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ParticleTerrain } from "./particle-terrain";
-import { FitnessPreview, ProjectPreview } from "./project-preview";
+import { FitnessPreview } from "./project-preview";
 
 const studies = {
   unity: [
@@ -38,38 +38,15 @@ const studies = {
       "I implemented the SQL database layer, working across the application and its external service boundary.",
     ],
   ],
-  opensource: [
-    [
-      "Explore",
-      "Understand an existing system",
-      "I use GitHub to explore existing code and report issues in open source projects.",
-    ],
-    [
-      "Build",
-      "Personal tools & bots",
-      "My personal tools include a Google Maps web scraper and a crypto trading bot, built from open source projects.",
-    ],
-    [
-      "Contribute",
-      "Bug fixes & contributions",
-      "I contribute changes and bug fixes on GitHub, working with Python, Go, and Git.",
-    ],
-  ],
 } as const;
 
-export function ProjectStudy({ id }: { id: "unity" | "fitness" | "opensource" }) {
+export function ProjectStudy({ id }: { id: "unity" | "fitness" }) {
   const [active, setActive] = useState(0);
   const steps = studies[id];
   return (
     <div className={`project-study study-${id}`}>
       <div className="study-visual">
-        {id === "unity" ? (
-          <ParticleTerrain />
-        ) : id === "fitness" ? (
-          <FitnessPreview expanded />
-        ) : (
-          <ProjectPreview id={id} />
-        )}
+        {id === "unity" ? <ParticleTerrain /> : <FitnessPreview expanded />}
       </div>
       <div className="study-tabs" role="group" aria-label="Explore project engineering">
         {steps.map(([label], index) => (
