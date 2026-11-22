@@ -103,6 +103,7 @@ export function ProjectPreview({ id }: { id: string }) {
           <span className="tape31-brand-rec">REC</span>
           <span className="tape31-brand-title">TAPE 31</span>
           <span className="tape31-brand-jam">OCT. 31 1997</span>
+          <span className="tape31-winner-pill">★ Ranked #1 Overall</span>
         </div>
         <img
           className="tape31-card-screen"

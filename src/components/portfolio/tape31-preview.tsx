@@ -6,6 +6,12 @@ import { mediaPath } from "@/lib/portfolio";
 
 const screenshots = [
   {
+    id: "results",
+    label: "★ 1st Place Results",
+    file: "results.webp",
+    alt: "Meta Game Jam official results ranking Tape 31 #1 overall and #1 in audio, concept, art, and creativity",
+  },
+  {
     id: "title",
     label: "Title & Menu",
     file: "title.webp",
@@ -45,7 +51,10 @@ export function Tape31Project() {
   return (
     <div className="tape31-project">
       <div className="demo-toolbar">
-        <span className="demo-project-name">Tape 31 / Game Theory Fall Jam</span>
+        <div className="tape31-toolbar-left">
+          <span className="demo-project-name">Tape 31</span>
+          <span className="tape31-winner-badge">🏆 1st Place Winner · Meta Game Jam</span>
+        </div>
         <a
           className="tape31-toolbar-link"
           href="https://eugenranow.itch.io/tape-31"
@@ -54,6 +63,43 @@ export function Tape31Project() {
         >
           Play on itch.io ↗
         </a>
+      </div>
+
+      <div className="tape31-scorecard" aria-label="Meta Game Jam Rankings">
+        <div className="score-item-overall">
+          <div className="score-overall-top">
+            <span className="score-badge">JAM WINNER</span>
+            <span className="score-rank">#1 Overall</span>
+          </div>
+          <span className="score-val">Score: 3.943 / 5.0 (10 ratings)</span>
+        </div>
+        <div className="score-breakdown">
+          <div className="score-metric">
+            <span className="metric-rank">#1</span>
+            <span className="metric-title">Art & Presentation</span>
+            <span className="metric-score">4.489</span>
+          </div>
+          <div className="score-metric">
+            <span className="metric-rank">#1</span>
+            <span className="metric-title">Audio & Sound</span>
+            <span className="metric-score">3.904</span>
+          </div>
+          <div className="score-metric">
+            <span className="metric-rank">#1</span>
+            <span className="metric-title">Concept & Story</span>
+            <span className="metric-score">3.904</span>
+          </div>
+          <div className="score-metric">
+            <span className="metric-rank">#1</span>
+            <span className="metric-title">Creativity</span>
+            <span className="metric-score">3.806</span>
+          </div>
+          <div className="score-metric">
+            <span className="metric-rank">#2</span>
+            <span className="metric-title">Gameplay & Fun</span>
+            <span className="metric-score">3.611</span>
+          </div>
+        </div>
       </div>
 
       <div className="tape31-screenshots">

@@ -2357,6 +2357,18 @@ body > [data-state][class*="bg-black/80"] {
   border-left: 1px solid #ffffff24;
   padding-left: 8px;
 }
+.tape31-winner-pill {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffdf70;
+  background: #ffc4001c;
+  border: 1px solid #ffc40040;
+  padding: 2px 7px;
+  border-radius: 999px;
+  margin-left: 4px;
+  text-transform: uppercase;
+}
 .tape31-card-screen {
   position: absolute;
   width: 66%;
@@ -2558,6 +2570,98 @@ body > [data-state][class*="bg-black/80"] {
 .tape31-toolbar-link:hover {
   color: #fff;
   border-color: #ff8899;
+}
+.tape31-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.tape31-winner-badge {
+  font: 11px var(--mono);
+  font-weight: 600;
+  color: #ffdf70;
+  background: #ffc40018;
+  border: 1px solid #ffc4003d;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+.tape31-scorecard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 20px 0;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background: radial-gradient(120% 120% at 0% 0%, #ffc4000f 0%, #10162590 100%);
+  border: 1px solid #ffc40030;
+}
+.score-item-overall {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ffffff12;
+}
+.score-overall-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.score-badge {
+  font: 9px var(--mono);
+  font-weight: 700;
+  color: #ffdf70;
+  background: #ffc40024;
+  border: 1px solid #ffc40050;
+  padding: 1px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+}
+.score-rank {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f7f9fd;
+  font-family: var(--mono);
+  letter-spacing: 0.02em;
+}
+.score-val {
+  font: 11px var(--mono);
+  color: #a9bedb;
+}
+.score-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+}
+.score-metric {
+  display: flex;
+  flex-direction: column;
+  background: #0d132066;
+  border: 1px solid #ffffff0d;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+.metric-rank {
+  font: 13px var(--mono);
+  font-weight: 700;
+  color: #ffdf70;
+}
+.metric-title {
+  font-size: 10px;
+  color: #a0b2cc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+.metric-score {
+  font: 10px var(--mono);
+  color: #7990b2;
+  margin-top: 1px;
 }
 .tape31-project {
   border: 1px solid #ffffff18;
@@ -2832,6 +2936,12 @@ body > [data-state][class*="bg-black/80"] {
   .tape31-card-brand {
     top: 26px;
     left: 20px;
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .tape31-scorecard {
+    margin: 12px 14px 0;
+    padding: 12px 14px;
   }
   .tape31-card-screen {
     right: -4%;
