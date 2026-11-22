@@ -57,7 +57,7 @@ export const projects = [
     role: "Ranked #1 Overall · Meta Game Jam Winner",
     stack: ["Unity", "C#", "3D Lighting", "itch.io", "Jam Winner"],
     description:
-      "Winner of the Meta Game Jam by a milestone, ranked #1 Overall out of all entries with 1st place in Art & Presentation, Audio & Sound Design, Concept & Storytelling, and Creativity (#2 Gameplay). Developed a first-person 3D horror game in Unity with 200+ views and 100+ downloads on itch.io.",
+      "Winner of the Meta Game Jam by a milestone, ranked #1 Overall out of all entries with 1st place in Art & Presentation, Audio & Sound Design, Concept & Storytelling, and Creativity (#2 Gameplay). Developed a first-person 3D horror game in Unity with over 400 views and 100+ downloads on itch.io.",
     detail:
       "Ranked 1st place overall in the Meta Game Jam, sweeping 5 out of 6 scoring categories: #1 Art & Presentation (4.489), #1 Audio & Sound Design (3.904), #1 Concept & Storytelling (3.904), #1 Creativity & Originality (3.806), and #2 Gameplay & Fun (3.611). Built under game jam constraints with custom retro VHS post-processing, analog camcorder HUD telemetry, volumetric lighting, and diegetic storytelling.",
     link: "https://eugenranow.itch.io/tape-31",

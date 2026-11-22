@@ -20,7 +20,7 @@ export const projectSummaries: Record<string, string> = {
   unity:
     "A commercial multiplayer game for Steam, targeting 2027. Built in Unity with movement, physics, animation, and networked systems.",
   tape31:
-    "Winner of the Meta Game Jam by a milestone, ranked #1 Overall and #1 in Art, Audio, Concept, and Creativity. Developed in Unity with 200+ views on itch.io.",
+    "Winner of the Meta Game Jam by a milestone, ranked #1 Overall and #1 in Art, Audio, Concept, and Creativity. Developed in Unity with over 400 views on itch.io.",
   apex: projects.find((project) => project.id === "apex")!.description,
   fitness: "A team-built fitness app. I implemented the OpenAI integration and database layer.",
 };
